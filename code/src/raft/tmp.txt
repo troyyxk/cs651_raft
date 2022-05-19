@@ -1,0 +1,563 @@
+Test (2D): snapshots basic ...
+==================
+WARNING: DATA RACE
+Write at 0x00c000144068 by goroutine 47:
+  6.824/raft.(*Raft).becomeFollower()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raftUtils.go:80 +0x42
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:41 +0x227
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Previous read at 0x00c000144068 by goroutine 10:
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:266 +0x4a9
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 47 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+
+Goroutine 10 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Write at 0x00c000144040 by goroutine 47:
+  6.824/raft.(*Raft).becomeFollower()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raftUtils.go:83 +0x78
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:41 +0x227
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Previous read at 0x00c000144040 by goroutine 10:
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:266 +0x513
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 47 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+
+Goroutine 10 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000144410 by goroutine 74:
+  6.824/raft.(*Raft).logIndexCheck()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:37 +0x415
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:76 +0x62
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).handleSendAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:146 +0x747
+
+Previous write at 0x00c000144410 by goroutine 15:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:82 +0x265
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 74 (running) created at:
+  6.824/raft.(*Raft).broadcastAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:225 +0x16b
+  6.824/raft.(*Raft).ticker()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:265 +0x9f
+
+Goroutine 15 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c0001443f8 by goroutine 74:
+  6.824/raft.(*Raft).logIndexCheck()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:21 +0x1f5
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:76 +0x62
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).handleSendAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:146 +0x747
+
+Previous write at 0x00c0001443f8 by goroutine 15:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:81 +0x221
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 74 (running) created at:
+  6.824/raft.(*Raft).broadcastAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:225 +0x16b
+  6.824/raft.(*Raft).ticker()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:265 +0x9f
+
+Goroutine 15 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c00016faa0 by goroutine 74:
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:83 +0xf0
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).handleSendAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:146 +0x747
+
+Previous write at 0x00c00016faa0 by goroutine 15:
+  runtime.slicecopy()
+      /usr/lib/go-1.13/src/runtime/slice.go:197 +0x0
+  6.824/raft.(*Raft).getLogEntryStartingAt()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:147 +0x1d2
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:81 +0x1f2
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 74 (running) created at:
+  6.824/raft.(*Raft).broadcastAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:225 +0x16b
+  6.824/raft.(*Raft).ticker()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:265 +0x9f
+
+Goroutine 15 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Write at 0x00c000144078 by goroutine 10:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:81 +0x221
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Previous read at 0x00c000144078 by goroutine 83:
+  6.824/raft.(*Raft).logIndexCheck()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:21 +0x1f5
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:76 +0x62
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:86 +0x6da
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Goroutine 10 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+
+Goroutine 83 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+==================
+==================
+WARNING: DATA RACE
+Write at 0x00c000144090 by goroutine 10:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:82 +0x265
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Previous read at 0x00c000144090 by goroutine 83:
+  6.824/raft.(*Raft).logIndexCheck()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:37 +0x415
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:76 +0x62
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:86 +0x6da
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Goroutine 10 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+
+Goroutine 83 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000144330 by goroutine 84:
+  6.824/raft.(*Raft).logIndexCheck()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:37 +0x415
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:76 +0x62
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:86 +0x6da
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Previous write at 0x00c000144330 by goroutine 13:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:82 +0x265
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 84 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+
+Goroutine 13 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c00028b860 by goroutine 84:
+  6.824/raft.(*Raft).getLogEntryAtIndex()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:83 +0xf0
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:71 +0x17e
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:86 +0x6da
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Previous write at 0x00c00028b860 by goroutine 13:
+  runtime.slicecopy()
+      /usr/lib/go-1.13/src/runtime/slice.go:197 +0x0
+  6.824/raft.(*Raft).getLogEntryStartingAt()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:147 +0x1d2
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:81 +0x1f2
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 84 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+
+Goroutine 13 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000144428 by goroutine 15:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:83 +0x28e
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Previous write at 0x00c000144428 by goroutine 52:
+  6.824/raft.(*Raft).commitToApplyChannel()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:89 +0x36d
+  6.824/raft.(*Raft).handleSendAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:146 +0x747
+
+Goroutine 15 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+
+Goroutine 52 (finished) created at:
+  6.824/raft.(*Raft).broadcastAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:225 +0x16b
+  6.824/raft.(*Raft).ticker()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:265 +0x9f
+==================
+==================
+WARNING: DATA RACE
+Write at 0x00c000144420 by goroutine 51:
+  6.824/raft.(*Raft).leaderUpdateCommit()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/commitAndApplyUtils.go:48 +0x560
+  6.824/raft.(*Raft).handleSendAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:145 +0x736
+
+Previous read at 0x00c000144420 by goroutine 15:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:69 +0x5f9
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 51 (running) created at:
+  6.824/raft.(*Raft).broadcastAppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:225 +0x16b
+  6.824/raft.(*Raft).ticker()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:265 +0x9f
+
+Goroutine 15 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000144098 by goroutine 63:
+  6.824/raft.(*Raft).getLastLogEntryTerm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:15 +0x66
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:92 +0x5c5
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Previous write at 0x00c000144098 by goroutine 10:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:80 +0x1bf
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 63 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+
+Goroutine 10 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000144338 by goroutine 65:
+  6.824/raft.(*Raft).getLastLogEntryTerm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/logUtils.go:15 +0x66
+  6.824/raft.(*Raft).AppendEntries()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:92 +0x5c5
+  runtime.call32()
+      /usr/lib/go-1.13/src/runtime/asm_amd64.s:539 +0x3a
+  reflect.Value.Call()
+      /usr/lib/go-1.13/src/reflect/value.go:321 +0xd3
+  6.824/labrpc.(*Service).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x811
+  6.824/labrpc.(*Server).dispatch()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x607
+  6.824/labrpc.(*Network).processReq.func1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x93
+
+Previous write at 0x00c000144338 by goroutine 13:
+  6.824/raft.(*Raft).Snapshot()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/installSnapshot.go:80 +0x1bf
+  6.824/raft.(*config).applySnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:272 +0x661
+  6.824/raft.(*config).applierSnap()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:292 +0x1d5
+  6.824/raft.(*config).applierSnap-fm()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:278 +0x5f
+
+Goroutine 65 (running) created at:
+  6.824/labrpc.(*Network).processReq()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x174
+
+Goroutine 13 (running) created at:
+  6.824/raft.(*config).start1()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:341 +0x9e1
+  6.824/raft.make_config()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/config.go:102 +0xb1f
+  6.824/raft.snapcommon()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1044 +0x6d
+  6.824/raft.TestSnapshotBasic2D()
+      /mnt/c/Users/xingk/Documents/gitlab/code/src/raft/test_test.go:1096 +0x59
+  testing.tRunner()
+      /usr/lib/go-1.13/src/testing/testing.go:909 +0x199
+==================
+signal: interrupt
+FAIL	6.824/raft	4.466s

@@ -1,0 +1,741 @@
+GOROOT=C:\Program Files\Go #gosetup
+GOPATH=C:\Users\xingk\go #gosetup
+"C:\Program Files\Go\bin\go.exe" test -c -o C:\Users\xingk\AppData\Local\Temp\GoLand\___1TestMissChange_in_6_824_shardkv.test.exe 6.824/shardkv #gosetup
+"C:\Program Files\Go\bin\go.exe" tool test2json -t C:\Users\xingk\AppData\Local\Temp\GoLand\___1TestMissChange_in_6_824_shardkv.test.exe -test.v -test.paniconexit0 -test.run ^\QTestMissChange\E$ #gosetup
+=== RUN   TestMissChange
+Test: servers miss configuration changes...
+17:31:31.278863 STT= ShardKV: 0, gid: 100, start shard configuration ticker
+17:31:31.278863 STT= ShardKV: 0, gid: 100, start applyCh ticker
+17:31:31.278863 STT= ShardKV: 1, gid: 100, start shard configuration ticker
+17:31:31.278863 server [0], gid [100], start acquire shard ticker
+17:31:31.278863 server [1], gid [100], start acquire shard ticker
+17:31:31.278863 STT= ShardKV: 1, gid: 100, start applyCh ticker
+17:31:31.278970 STT= ShardKV: 2, gid: 100, start shard configuration ticker
+17:31:31.278970 server [2], gid [100], start acquire shard ticker
+17:31:31.278970 STT= ShardKV: 2, gid: 100, start applyCh ticker
+17:31:31.279046 STT= ShardKV: 0, gid: 101, start shard configuration ticker
+17:31:31.279046 server [0], gid [101], start acquire shard ticker
+17:31:31.279046 STT= ShardKV: 0, gid: 101, start applyCh ticker
+17:31:31.279046 STT= ShardKV: 1, gid: 101, start shard configuration ticker
+17:31:31.279046 server [1], gid [101], start acquire shard ticker
+17:31:31.279046 STT= ShardKV: 1, gid: 101, start applyCh ticker
+17:31:31.279118 STT= ShardKV: 2, gid: 101, start shard configuration ticker
+17:31:31.279118 server [2], gid [101], start acquire shard ticker
+17:31:31.279118 STT= ShardKV: 2, gid: 101, start applyCh ticker
+17:31:31.279118 STT= ShardKV: 0, gid: 102, start shard configuration ticker
+17:31:31.279118 server [0], gid [102], start acquire shard ticker
+17:31:31.279118 STT= ShardKV: 0, gid: 102, start applyCh ticker
+17:31:31.279118 STT= ShardKV: 1, gid: 102, start shard configuration ticker
+17:31:31.279118 STT= ShardKV: 1, gid: 102, start applyCh ticker
+17:31:31.279118 server [1], gid [102], start acquire shard ticker
+17:31:31.279118 STT= ShardKV: 2, gid: 102, start shard configuration ticker
+17:31:31.279118 STT= ShardKV: 2, gid: 102, start applyCh ticker
+17:31:31.279118 server [2], gid [102], start acquire shard ticker
+17:31:31.279118 CCC= client: 3444764295159967059, client create with id: 3444764295159967059
+17:31:31.279471 --- Join 0 ---
+17:31:31.836008 --- Put Section 0 ---
+17:31:31.836008 --- Put 0 ---
+17:31:31.836008 gid [100], server [2], shard config Ticker, new config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, cur config: {0 [0 0 0 0 0 0 0 0 0 0] map[]}.
+17:31:31.836008 gid [102], server [1], shard config Ticker, new config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, cur config: {0 [0 0 0 0 0 0 0 0 0 0] map[]}.
+17:31:31.866555 coordinator server [2], gid [100], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:31.866555 coordinator server [2], gid [100], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.866555 coordinator server [1], gid [102], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:31.866555 coordinator server [1], gid [102], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.897983 coordinator server [2], gid [102], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:31.897983 coordinator server [2], gid [102], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.897983 coordinator server [0], gid [100], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:31.897983 coordinator server [0], gid [102], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:31.897983 coordinator server [0], gid [102], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.897983 coordinator server [0], gid [100], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.897983 coordinator server [1], gid [100], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:31.897983 coordinator server [1], gid [100], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:1 6:1 7:1 8:1 9:1], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.960033 client [3444764295159967059], RequestIndex [0], start put/append request, shard [8], to gid [100], key: 0, value: uPI_P357eumTC5en9hdW
+17:31:31.960033 client [3444764295159967059], RequestIndex [0], put/append, to shard [8], gid [100], request to server &{3EpAO_BM_GOx1ctSuKvT 0xc00005c240 0xc00005c2a0}
+17:31:31.960033 client [3444764295159967059], RequestIndex [0], put/append, to shard [8], gid [100], request to server &{yVS9VaxEQwi7UAVToS1N 0xc00005c240 0xc00005c2a0}
+17:31:31.960033 client [3444764295159967059], RequestIndex [0], put/append, to shard [8], gid [100], request to server &{rOz5QOOYZLK5IXaNrNZj 0xc00005c240 0xc00005c2a0}
+17:31:31.960033 gid [100], server [2], RequestIndex [0], PUT, key: 0, value: uPI_P357eumTC5en9hdW, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.960033 gid [100], server [2], RequestIndex [0], PUT start raft, key: 0, value: uPI_P357eumTC5en9hdW, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:31.992019 coordinator server [2], gid [100], client id [3444764295159967059], request index [0], shard index [8], put, key: 0, value: uPI_P357eumTC5en9hdW, result after put: uPI_P357eumTC5en9hdW.
+17:31:31.992019 coordinator, gid [100], server [2], send
+17:31:31.992019 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 0, kv.startChannels: map[3444764295159967059:map[0:{{2 0 3444764295159967059 0 PUT true 0 uPI_P357eumTC5en9hdW {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003ddb60}]].
+17:31:31.992019 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:31.992019 coordinator, gid [100], server [2], finish send
+17:31:31.992019 gid [100], server [2], RequestIndex [0], PUT, return error type: OK, key: 0, value: uPI_P357eumTC5en9hdW, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[]}].
+17:31:31.992019 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 0, kv.startChannels: map[3444764295159967059:map[]].
+17:31:31.992019 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:31.992389 --- Put 1 ---
+17:31:31.992389 client [3444764295159967059], RequestIndex [1], start put/append request, shard [9], to gid [100], key: 1, value: hqCOOODdaWbmHuYNBQ3Z
+17:31:31.992389 client [3444764295159967059], RequestIndex [1], put/append, to shard [9], gid [100], request to server &{4huTqbz2UGDlCxXpG6dp 0xc00005c240 0xc00005c2a0}
+17:31:31.992389 client [3444764295159967059], RequestIndex [1], put/append, to shard [9], gid [100], request to server &{vCQKA201ugIWcjh3k67W 0xc00005c240 0xc00005c2a0}
+17:31:31.992389 client [3444764295159967059], RequestIndex [1], put/append, to shard [9], gid [100], request to server &{a9JdNG1j0uoNVX4VpRA0 0xc00005c240 0xc00005c2a0}
+17:31:31.992389 gid [100], server [2], RequestIndex [1], PUT, key: 1, value: hqCOOODdaWbmHuYNBQ3Z, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[]}].
+17:31:31.992389 gid [100], server [2], RequestIndex [1], PUT start raft, key: 1, value: hqCOOODdaWbmHuYNBQ3Z, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[]}].
+17:31:32.022733 coordinator server [1], gid [100], client id [3444764295159967059], request index [0], shard index [8], put, key: 0, value: uPI_P357eumTC5en9hdW, result after put: uPI_P357eumTC5en9hdW.
+17:31:32.022733 coordinator server [2], gid [100], client id [3444764295159967059], request index [1], shard index [9], put, key: 1, value: hqCOOODdaWbmHuYNBQ3Z, result after put: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.022733 coordinator, gid [100], server [2], send
+17:31:32.023081 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 1, kv.startChannels: map[3444764295159967059:map[1:{{2 0 3444764295159967059 1 PUT true 1 hqCOOODdaWbmHuYNBQ3Z {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc00046dc20}]].
+17:31:32.023081 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.023081 coordinator, gid [100], server [2], finish send
+17:31:32.023081 gid [100], server [2], RequestIndex [1], PUT, return error type: OK, key: 1, value: hqCOOODdaWbmHuYNBQ3Z, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.023081 coordinator server [0], gid [100], client id [3444764295159967059], request index [0], shard index [8], put, key: 0, value: uPI_P357eumTC5en9hdW, result after put: uPI_P357eumTC5en9hdW.
+17:31:32.023081 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 1, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.023081 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.023081 --- Put 2 ---
+17:31:32.023081 client [3444764295159967059], RequestIndex [2], start put/append request, shard [0], to gid [100], key: 2, value: TbwXp__fYjjm16rroQV3
+17:31:32.023081 client [3444764295159967059], RequestIndex [2], put/append, to shard [0], gid [100], request to server &{Xw5Vp7spfpqn2N2dIliD 0xc00005c240 0xc00005c2a0}
+17:31:32.023081 client [3444764295159967059], RequestIndex [2], put/append, to shard [0], gid [100], request to server &{lTTJc9XbqyfXPESdAVuE 0xc00005c240 0xc00005c2a0}
+17:31:32.023081 client [3444764295159967059], RequestIndex [2], put/append, to shard [0], gid [100], request to server &{1uIJT-wyV36Cq_15Xdld 0xc00005c240 0xc00005c2a0}
+17:31:32.023081 gid [100], server [2], RequestIndex [2], PUT, key: 2, value: TbwXp__fYjjm16rroQV3, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.023081 gid [100], server [2], RequestIndex [2], PUT start raft, key: 2, value: TbwXp__fYjjm16rroQV3, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.053845 coordinator server [1], gid [100], client id [3444764295159967059], request index [1], shard index [9], put, key: 1, value: hqCOOODdaWbmHuYNBQ3Z, result after put: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.053845 coordinator server [2], gid [100], client id [3444764295159967059], request index [2], shard index [0], put, key: 2, value: TbwXp__fYjjm16rroQV3, result after put: TbwXp__fYjjm16rroQV3.
+17:31:32.053845 coordinator server [0], gid [100], client id [3444764295159967059], request index [1], shard index [9], put, key: 1, value: hqCOOODdaWbmHuYNBQ3Z, result after put: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.053845 coordinator, gid [100], server [2], send
+17:31:32.053845 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 2, kv.startChannels: map[3444764295159967059:map[2:{{2 0 3444764295159967059 2 PUT true 2 TbwXp__fYjjm16rroQV3 {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc00026c3c0}]].
+17:31:32.054119 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.054119 coordinator, gid [100], server [2], finish send
+17:31:32.054119 gid [101], server [1], shard config Ticker, new config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, cur config: {0 [0 0 0 0 0 0 0 0 0 0] map[]}.
+17:31:32.054119 gid [100], server [2], RequestIndex [2], PUT, return error type: OK, key: 2, value: TbwXp__fYjjm16rroQV3, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.054119 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 2, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.054119 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.054119 --- Put 3 ---
+17:31:32.054119 client [3444764295159967059], RequestIndex [3], start put/append request, shard [1], to gid [100], key: 3, value: P-C6ge0q97hcSXduhP90
+17:31:32.054119 client [3444764295159967059], RequestIndex [3], put/append, to shard [1], gid [100], request to server &{aPU8fPMnIVYUl25MD0RN 0xc00005c240 0xc00005c2a0}
+17:31:32.054119 client [3444764295159967059], RequestIndex [3], put/append, to shard [1], gid [100], request to server &{Z5vOjpz3m5l4fzvzoLi8 0xc00005c240 0xc00005c2a0}
+17:31:32.054119 client [3444764295159967059], RequestIndex [3], put/append, to shard [1], gid [100], request to server &{JUCZUolEz-Jek67ig5ns 0xc00005c240 0xc00005c2a0}
+17:31:32.054119 gid [100], server [2], RequestIndex [3], PUT, key: 3, value: P-C6ge0q97hcSXduhP90, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.054119 gid [100], server [2], RequestIndex [3], PUT start raft, key: 3, value: P-C6ge0q97hcSXduhP90, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.083745 coordinator server [1], gid [101], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:32.083745 coordinator server [1], gid [101], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.083745 coordinator server [2], gid [100], client id [3444764295159967059], request index [3], shard index [1], put, key: 3, value: P-C6ge0q97hcSXduhP90, result after put: P-C6ge0q97hcSXduhP90.
+17:31:32.084028 coordinator, gid [100], server [2], send
+17:31:32.084028 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 3, kv.startChannels: map[3444764295159967059:map[3:{{2 0 3444764295159967059 3 PUT true 3 P-C6ge0q97hcSXduhP90 {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003dc720}]].
+17:31:32.084028 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.084028 coordinator, gid [100], server [2], finish send
+17:31:32.084028 gid [100], server [2], RequestIndex [3], PUT, return error type: OK, key: 3, value: P-C6ge0q97hcSXduhP90, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.084028 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 3, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.084028 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.084028 --- Put 4 ---
+17:31:32.084028 client [3444764295159967059], RequestIndex [4], start put/append request, shard [2], to gid [100], key: 4, value: 0vStQBjbWha8sPpbrnYO
+17:31:32.084028 client [3444764295159967059], RequestIndex [4], put/append, to shard [2], gid [100], request to server &{FAKkW52dJa_KLOL0aWut 0xc00005c240 0xc00005c2a0}
+17:31:32.084028 coordinator server [1], gid [100], client id [3444764295159967059], request index [2], shard index [0], put, key: 2, value: TbwXp__fYjjm16rroQV3, result after put: TbwXp__fYjjm16rroQV3.
+17:31:32.084028 coordinator server [0], gid [100], client id [3444764295159967059], request index [2], shard index [0], put, key: 2, value: TbwXp__fYjjm16rroQV3, result after put: TbwXp__fYjjm16rroQV3.
+17:31:32.084028 client [3444764295159967059], RequestIndex [4], put/append, to shard [2], gid [100], request to server &{LX0du4OFtdIW2sZy7hnK 0xc00005c240 0xc00005c2a0}
+17:31:32.084028 client [3444764295159967059], RequestIndex [4], put/append, to shard [2], gid [100], request to server &{FenIshQ_BBkvopdt0sOW 0xc00005c240 0xc00005c2a0}
+17:31:32.084245 gid [100], server [2], RequestIndex [4], PUT, key: 4, value: 0vStQBjbWha8sPpbrnYO, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.084245 gid [100], server [2], RequestIndex [4], PUT start raft, key: 4, value: 0vStQBjbWha8sPpbrnYO, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.115029 coordinator server [1], gid [100], client id [3444764295159967059], request index [3], shard index [1], put, key: 3, value: P-C6ge0q97hcSXduhP90, result after put: P-C6ge0q97hcSXduhP90.
+17:31:32.115029 coordinator server [2], gid [100], client id [3444764295159967059], request index [4], shard index [2], put, key: 4, value: 0vStQBjbWha8sPpbrnYO, result after put: 0vStQBjbWha8sPpbrnYO.
+17:31:32.115029 coordinator server [0], gid [100], client id [3444764295159967059], request index [3], shard index [1], put, key: 3, value: P-C6ge0q97hcSXduhP90, result after put: P-C6ge0q97hcSXduhP90.
+17:31:32.115029 coordinator, gid [100], server [2], send
+17:31:32.115029 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 4, kv.startChannels: map[3444764295159967059:map[4:{{2 0 3444764295159967059 4 PUT true 4 0vStQBjbWha8sPpbrnYO {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0001c6900}]].
+17:31:32.115029 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.115029 coordinator, gid [100], server [2], finish send
+17:31:32.115029 gid [100], server [2], RequestIndex [4], PUT, return error type: OK, key: 4, value: 0vStQBjbWha8sPpbrnYO, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.115029 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 4, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.115029 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.115405 --- Put 5 ---
+17:31:32.115405 coordinator server [2], gid [101], handle InstallShardConfig, config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}, kv store: map[].
+17:31:32.115405 client [3444764295159967059], RequestIndex [5], start put/append request, shard [3], to gid [100], key: 5, value: UFGcJr0MboRp9OwcLcmr
+17:31:32.115405 client [3444764295159967059], RequestIndex [5], put/append, to shard [3], gid [100], request to server &{tGOOI_IL4iqdPaszjymU 0xc00005c240 0xc00005c2a0}
+17:31:32.115405 coordinator server [2], gid [101], request index [0], handle InstallShardConfig, first time, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [100 100 100 100 100 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.115405 client [3444764295159967059], RequestIndex [5], put/append, to shard [3], gid [100], request to server &{IvQnSmc-piPWOF3mHt2G 0xc00005c240 0xc00005c2a0}
+17:31:32.115405 client [3444764295159967059], RequestIndex [5], put/append, to shard [3], gid [100], request to server &{PzO2Q0JTwyF6Kvt8oZHK 0xc00005c240 0xc00005c2a0}
+17:31:32.115405 gid [100], server [2], RequestIndex [5], PUT, key: 5, value: UFGcJr0MboRp9OwcLcmr, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.115405 gid [100], server [2], RequestIndex [5], PUT start raft, key: 5, value: UFGcJr0MboRp9OwcLcmr, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.146152 coordinator server [2], gid [100], client id [3444764295159967059], request index [5], shard index [3], put, key: 5, value: UFGcJr0MboRp9OwcLcmr, result after put: UFGcJr0MboRp9OwcLcmr.
+17:31:32.146152 coordinator server [1], gid [100], client id [3444764295159967059], request index [4], shard index [2], put, key: 4, value: 0vStQBjbWha8sPpbrnYO, result after put: 0vStQBjbWha8sPpbrnYO.
+17:31:32.146152 coordinator server [0], gid [100], client id [3444764295159967059], request index [4], shard index [2], put, key: 4, value: 0vStQBjbWha8sPpbrnYO, result after put: 0vStQBjbWha8sPpbrnYO.
+17:31:32.146152 coordinator, gid [100], server [2], send
+17:31:32.146152 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 5, kv.startChannels: map[3444764295159967059:map[5:{{2 0 3444764295159967059 5 PUT true 5 UFGcJr0MboRp9OwcLcmr {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0004942a0}]].
+17:31:32.146152 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.146152 coordinator, gid [100], server [2], finish send
+17:31:32.146513 gid [100], server [2], RequestIndex [5], PUT, return error type: OK, key: 5, value: UFGcJr0MboRp9OwcLcmr, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.146513 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 5, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.146513 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.146513 --- Put 6 ---
+17:31:32.146513 client [3444764295159967059], RequestIndex [6], start put/append request, shard [4], to gid [100], key: 6, value: jRneS7fnglu28-lR0TC8
+17:31:32.146513 client [3444764295159967059], RequestIndex [6], put/append, to shard [4], gid [100], request to server &{qIaXZBDtTPDqjizaB1Rw 0xc00005c240 0xc00005c2a0}
+17:31:32.146513 client [3444764295159967059], RequestIndex [6], put/append, to shard [4], gid [100], request to server &{XM-hipQXLbUUFtGfF_TL 0xc00005c240 0xc00005c2a0}
+17:31:32.146513 client [3444764295159967059], RequestIndex [6], put/append, to shard [4], gid [100], request to server &{rPGxbKT4OA32Ar79h7bc 0xc00005c240 0xc00005c2a0}
+17:31:32.146513 gid [100], server [2], RequestIndex [6], PUT, key: 6, value: jRneS7fnglu28-lR0TC8, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.146513 gid [100], server [2], RequestIndex [6], PUT start raft, key: 6, value: jRneS7fnglu28-lR0TC8, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.177167 coordinator server [1], gid [100], client id [3444764295159967059], request index [5], shard index [3], put, key: 5, value: UFGcJr0MboRp9OwcLcmr, result after put: UFGcJr0MboRp9OwcLcmr.
+17:31:32.177167 coordinator server [2], gid [100], client id [3444764295159967059], request index [6], shard index [4], put, key: 6, value: jRneS7fnglu28-lR0TC8, result after put: jRneS7fnglu28-lR0TC8.
+17:31:32.177167 coordinator, gid [100], server [2], send
+17:31:32.177566 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 6, kv.startChannels: map[3444764295159967059:map[6:{{2 0 3444764295159967059 6 PUT true 6 jRneS7fnglu28-lR0TC8 {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0004949c0}]].
+17:31:32.177566 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.177566 coordinator, gid [100], server [2], finish send
+17:31:32.177566 gid [100], server [2], RequestIndex [6], PUT, return error type: OK, key: 6, value: jRneS7fnglu28-lR0TC8, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.177566 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 6, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.177566 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.177566 --- Put 7 ---
+17:31:32.177566 client [3444764295159967059], RequestIndex [7], start put/append request, shard [5], to gid [100], key: 7, value: A3n7WnUOW0cZXJK0EsQm
+17:31:32.177566 client [3444764295159967059], RequestIndex [7], put/append, to shard [5], gid [100], request to server &{LqPpRwMkKDur6onwUehQ 0xc00005c240 0xc00005c2a0}
+17:31:32.177566 coordinator server [0], gid [100], client id [3444764295159967059], request index [5], shard index [3], put, key: 5, value: UFGcJr0MboRp9OwcLcmr, result after put: UFGcJr0MboRp9OwcLcmr.
+17:31:32.177566 client [3444764295159967059], RequestIndex [7], put/append, to shard [5], gid [100], request to server &{_XU66n4jhuzEgZ2d_a51 0xc00005c240 0xc00005c2a0}
+17:31:32.177716 coordinator server [0], gid [100], client id [3444764295159967059], request index [6], shard index [4], put, key: 6, value: jRneS7fnglu28-lR0TC8, result after put: jRneS7fnglu28-lR0TC8.
+17:31:32.177716 client [3444764295159967059], RequestIndex [7], put/append, to shard [5], gid [100], request to server &{iNUTF4Cce1eMTstMkLFh 0xc00005c240 0xc00005c2a0}
+17:31:32.177716 gid [100], server [2], RequestIndex [7], PUT, key: 7, value: A3n7WnUOW0cZXJK0EsQm, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.177716 gid [100], server [2], RequestIndex [7], PUT start raft, key: 7, value: A3n7WnUOW0cZXJK0EsQm, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.208590 coordinator server [2], gid [100], client id [3444764295159967059], request index [7], shard index [5], put, key: 7, value: A3n7WnUOW0cZXJK0EsQm, result after put: A3n7WnUOW0cZXJK0EsQm.
+17:31:32.208590 coordinator, gid [100], server [2], send
+17:31:32.208590 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 7, kv.startChannels: map[3444764295159967059:map[7:{{2 0 3444764295159967059 7 PUT true 7 A3n7WnUOW0cZXJK0EsQm {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003ddbc0}]].
+17:31:32.208645 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.208645 coordinator, gid [100], server [2], finish send
+17:31:32.208645 gid [100], server [2], RequestIndex [7], PUT, return error type: OK, key: 7, value: A3n7WnUOW0cZXJK0EsQm, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.208645 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 7, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.208645 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.208645 --- Put 8 ---
+17:31:32.208645 client [3444764295159967059], RequestIndex [8], start put/append request, shard [6], to gid [100], key: 8, value: qRsvHJD3DMggkF3lVV_r
+17:31:32.208645 client [3444764295159967059], RequestIndex [8], put/append, to shard [6], gid [100], request to server &{R7-C1L8vwzD2yoG5sJZe 0xc00005c240 0xc00005c2a0}
+17:31:32.208850 coordinator server [1], gid [100], client id [3444764295159967059], request index [6], shard index [4], put, key: 6, value: jRneS7fnglu28-lR0TC8, result after put: jRneS7fnglu28-lR0TC8.
+17:31:32.209146 coordinator server [0], gid [100], client id [3444764295159967059], request index [7], shard index [5], put, key: 7, value: A3n7WnUOW0cZXJK0EsQm, result after put: A3n7WnUOW0cZXJK0EsQm.
+17:31:32.209146 client [3444764295159967059], RequestIndex [8], put/append, to shard [6], gid [100], request to server &{YSLcYyk2X823-2EBH-tq 0xc00005c240 0xc00005c2a0}
+17:31:32.209265 client [3444764295159967059], RequestIndex [8], put/append, to shard [6], gid [100], request to server &{dbecCo2Tc84pEOrH3Y8W 0xc00005c240 0xc00005c2a0}
+17:31:32.209265 gid [100], server [2], RequestIndex [8], PUT, key: 8, value: qRsvHJD3DMggkF3lVV_r, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.209265 gid [100], server [2], RequestIndex [8], PUT start raft, key: 8, value: qRsvHJD3DMggkF3lVV_r, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.239470 coordinator server [2], gid [100], client id [3444764295159967059], request index [8], shard index [6], put, key: 8, value: qRsvHJD3DMggkF3lVV_r, result after put: qRsvHJD3DMggkF3lVV_r.
+17:31:32.239470 coordinator, gid [100], server [2], send
+17:31:32.239470 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 8, kv.startChannels: map[3444764295159967059:map[8:{{2 0 3444764295159967059 8 PUT true 8 qRsvHJD3DMggkF3lVV_r {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0004a03c0}]].
+17:31:32.239470 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.239470 coordinator, gid [100], server [2], finish send
+17:31:32.239470 gid [100], server [2], RequestIndex [8], PUT, return error type: OK, key: 8, value: qRsvHJD3DMggkF3lVV_r, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.239470 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 8, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.239470 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.239470 coordinator server [1], gid [100], client id [3444764295159967059], request index [7], shard index [5], put, key: 7, value: A3n7WnUOW0cZXJK0EsQm, result after put: A3n7WnUOW0cZXJK0EsQm.
+17:31:32.239728 --- Put 9 ---
+17:31:32.239728 client [3444764295159967059], RequestIndex [9], start put/append request, shard [7], to gid [100], key: 9, value: Sqi1wJM57UAYwfWRD3Ro
+17:31:32.239728 client [3444764295159967059], RequestIndex [9], put/append, to shard [7], gid [100], request to server &{5IJBMHQameP-dSv7abI6 0xc00005c240 0xc00005c2a0}
+17:31:32.239788 client [3444764295159967059], RequestIndex [9], put/append, to shard [7], gid [100], request to server &{7hCZZTHP4VnPMvhX0cbH 0xc00005c240 0xc00005c2a0}
+17:31:32.239788 client [3444764295159967059], RequestIndex [9], put/append, to shard [7], gid [100], request to server &{ArWC9lQR4a-We4G-D49w 0xc00005c240 0xc00005c2a0}
+17:31:32.239788 gid [100], server [2], RequestIndex [9], PUT, key: 9, value: Sqi1wJM57UAYwfWRD3Ro, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.239788 gid [100], server [2], RequestIndex [9], PUT start raft, key: 9, value: Sqi1wJM57UAYwfWRD3Ro, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.270557 coordinator server [2], gid [100], client id [3444764295159967059], request index [9], shard index [7], put, key: 9, value: Sqi1wJM57UAYwfWRD3Ro, result after put: Sqi1wJM57UAYwfWRD3Ro.
+17:31:32.270557 coordinator server [1], gid [100], client id [3444764295159967059], request index [8], shard index [6], put, key: 8, value: qRsvHJD3DMggkF3lVV_r, result after put: qRsvHJD3DMggkF3lVV_r.
+17:31:32.270557 coordinator, gid [100], server [2], send
+17:31:32.270557 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 9, kv.startChannels: map[3444764295159967059:map[9:{{2 0 3444764295159967059 9 PUT true 9 Sqi1wJM57UAYwfWRD3Ro {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0004a0b40}]].
+17:31:32.270557 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.270557 coordinator, gid [100], server [2], finish send
+17:31:32.270557 gid [100], server [2], RequestIndex [9], PUT, return error type: OK, key: 9, value: Sqi1wJM57UAYwfWRD3Ro, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.270557 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 9, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.270557 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.270954 client [3444764295159967059], RequestIndex [10], start put/append request, shard [8], to gid [100], key: 0
+17:31:32.270954 coordinator server [0], gid [100], client id [3444764295159967059], request index [8], shard index [6], put, key: 8, value: qRsvHJD3DMggkF3lVV_r, result after put: qRsvHJD3DMggkF3lVV_r.
+17:31:32.270954 coordinator server [0], gid [100], client id [3444764295159967059], request index [9], shard index [7], put, key: 9, value: Sqi1wJM57UAYwfWRD3Ro, result after put: Sqi1wJM57UAYwfWRD3Ro.
+17:31:32.270954 client [3444764295159967059], RequestIndex [10], put/append request, shard [8], to gid [100], to server: &{m-3mQWHH9NcZprqzNZjD 0xc00005c240 0xc00005c2a0}
+17:31:32.270954 client [3444764295159967059], RequestIndex [10], put/append request, shard [8], to gid [100], to server: &{765pshKI8WW9f9zYT-Zd 0xc00005c240 0xc00005c2a0}
+17:31:32.270954 client [3444764295159967059], RequestIndex [10], put/append request, shard [8], to gid [100], to server: &{ddgIGtba9FHCIYbb6w3q 0xc00005c240 0xc00005c2a0}
+17:31:32.270954 gid [100], server [2], RequestIndex [10], get, key: 0, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.270954 gid [100], server [2], get start raft, key: 0, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.301219 coordinator server [2], gid [100], client id [3444764295159967059], request index [10], shard index [8], get, key: 0, get result value: uPI_P357eumTC5en9hdW.
+17:31:32.301219 coordinator, gid [100], server [2], send
+17:31:32.301219 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 10, kv.startChannels: map[3444764295159967059:map[10:{{2 0 3444764295159967059 10 GET true 0  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0004a11a0}]].
+17:31:32.301219 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.301219 coordinator, gid [100], server [2], finish send
+17:31:32.301219 gid [100], server [2], RequestIndex [10], get, return error type: OK, key: 0, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.301219 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 10, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.301219 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.301219 coordinator server [1], gid [100], client id [3444764295159967059], request index [9], shard index [7], put, key: 9, value: Sqi1wJM57UAYwfWRD3Ro, result after put: Sqi1wJM57UAYwfWRD3Ro.
+17:31:32.301219 client [3444764295159967059], RequestIndex [11], start put/append request, shard [9], to gid [100], key: 1
+17:31:32.301219 client [3444764295159967059], RequestIndex [11], put/append request, shard [9], to gid [100], to server: &{5udpjCyP-nrS7-Keza8F 0xc00005c240 0xc00005c2a0}
+17:31:32.301676 client [3444764295159967059], RequestIndex [11], put/append request, shard [9], to gid [100], to server: &{S4XoK1gB8PyhRV4umqoP 0xc00005c240 0xc00005c2a0}
+17:31:32.301676 coordinator server [0], gid [100], client id [3444764295159967059], request index [10], shard index [8], get, key: 0, get result value: uPI_P357eumTC5en9hdW.
+17:31:32.301676 client [3444764295159967059], RequestIndex [11], put/append request, shard [9], to gid [100], to server: &{FREFSbWFl-RFLn-ojfBj 0xc00005c240 0xc00005c2a0}
+17:31:32.301676 gid [100], server [2], RequestIndex [11], get, key: 1, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.301676 gid [100], server [2], get start raft, key: 1, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.332013 coordinator server [1], gid [100], client id [3444764295159967059], request index [10], shard index [8], get, key: 0, get result value: uPI_P357eumTC5en9hdW.
+17:31:32.332013 coordinator server [2], gid [100], client id [3444764295159967059], request index [11], shard index [9], get, key: 1, get result value: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.332013 coordinator, gid [100], server [2], send
+17:31:32.332431 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 11, kv.startChannels: map[3444764295159967059:map[11:{{2 0 3444764295159967059 11 GET true 1  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0004a1980}]].
+17:31:32.332431 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.332431 coordinator, gid [100], server [2], finish send
+17:31:32.332431 gid [100], server [2], RequestIndex [11], get, return error type: OK, key: 1, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.332431 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 11, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.332431 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.332431 client [3444764295159967059], RequestIndex [12], start put/append request, shard [0], to gid [100], key: 2
+17:31:32.332431 client [3444764295159967059], RequestIndex [12], put/append request, shard [0], to gid [100], to server: &{pMT__KL2jHluavkdQUHq 0xc00005c240 0xc00005c2a0}
+17:31:32.332543 coordinator server [0], gid [100], client id [3444764295159967059], request index [11], shard index [9], get, key: 1, get result value: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.332543 client [3444764295159967059], RequestIndex [12], put/append request, shard [0], to gid [100], to server: &{lwYOhSrAlrCdAPucshuA 0xc00005c240 0xc00005c2a0}
+17:31:32.332543 client [3444764295159967059], RequestIndex [12], put/append request, shard [0], to gid [100], to server: &{cdUn5MPO0oIoKST-L5DN 0xc00005c240 0xc00005c2a0}
+17:31:32.332543 gid [100], server [2], RequestIndex [12], get, key: 2, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.332543 gid [100], server [2], get start raft, key: 2, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.363179 coordinator server [1], gid [100], client id [3444764295159967059], request index [11], shard index [9], get, key: 1, get result value: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.363179 coordinator server [2], gid [100], client id [3444764295159967059], request index [12], shard index [0], get, key: 2, get result value: TbwXp__fYjjm16rroQV3.
+17:31:32.363179 coordinator, gid [100], server [2], send
+17:31:32.363179 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 12, kv.startChannels: map[3444764295159967059:map[12:{{2 0 3444764295159967059 12 GET true 2  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc00047f5c0}]].
+17:31:32.363179 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.363179 coordinator, gid [100], server [2], finish send
+17:31:32.363179 gid [100], server [2], RequestIndex [12], get, return error type: OK, key: 2, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.363179 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 12, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.363179 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.363179 client [3444764295159967059], RequestIndex [13], start put/append request, shard [1], to gid [100], key: 3
+17:31:32.363179 client [3444764295159967059], RequestIndex [13], put/append request, shard [1], to gid [100], to server: &{ARELx2-y9UWcEmo9cDnd 0xc00005c240 0xc00005c2a0}
+17:31:32.363439 client [3444764295159967059], RequestIndex [13], put/append request, shard [1], to gid [100], to server: &{mbLtdW0Ez7WlcCrRgcGr 0xc00005c240 0xc00005c2a0}
+17:31:32.363517 client [3444764295159967059], RequestIndex [13], put/append request, shard [1], to gid [100], to server: &{rpxAycTyLPucRcnicgMO 0xc00005c240 0xc00005c2a0}
+17:31:32.363517 gid [100], server [2], RequestIndex [13], get, key: 3, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.363517 gid [100], server [2], get start raft, key: 3, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.393522 coordinator server [1], gid [100], client id [3444764295159967059], request index [12], shard index [0], get, key: 2, get result value: TbwXp__fYjjm16rroQV3.
+17:31:32.393522 coordinator server [2], gid [100], client id [3444764295159967059], request index [13], shard index [1], get, key: 3, get result value: P-C6ge0q97hcSXduhP90.
+17:31:32.393522 coordinator, gid [100], server [2], send
+17:31:32.393522 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 13, kv.startChannels: map[3444764295159967059:map[13:{{2 0 3444764295159967059 13 GET true 3  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0002303c0}]].
+17:31:32.393522 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.393522 coordinator, gid [100], server [2], finish send
+17:31:32.393522 gid [100], server [2], RequestIndex [13], get, return error type: OK, key: 3, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.393522 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 13, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.393522 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.393522 client [3444764295159967059], RequestIndex [14], start put/append request, shard [2], to gid [100], key: 4
+17:31:32.393522 client [3444764295159967059], RequestIndex [14], put/append request, shard [2], to gid [100], to server: &{JEcmDK5mcCinXs3rMdag 0xc00005c240 0xc00005c2a0}
+17:31:32.393522 coordinator server [0], gid [100], client id [3444764295159967059], request index [12], shard index [0], get, key: 2, get result value: TbwXp__fYjjm16rroQV3.
+17:31:32.393522 client [3444764295159967059], RequestIndex [14], put/append request, shard [2], to gid [100], to server: &{cE42HpSVP7Ushjy8tdH2 0xc00005c240 0xc00005c2a0}
+17:31:32.393522 client [3444764295159967059], RequestIndex [14], put/append request, shard [2], to gid [100], to server: &{TpgIg-pIHM41H4ftufOp 0xc00005c240 0xc00005c2a0}
+17:31:32.393522 gid [100], server [2], RequestIndex [14], get, key: 4, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.393522 gid [100], server [2], get start raft, key: 4, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.419181 coordinator server [2], gid [100], client id [3444764295159967059], request index [14], shard index [2], get, key: 4, get result value: 0vStQBjbWha8sPpbrnYO.
+17:31:32.419461 coordinator server [1], gid [100], client id [3444764295159967059], request index [13], shard index [1], get, key: 3, get result value: P-C6ge0q97hcSXduhP90.
+17:31:32.419461 coordinator, gid [100], server [2], send
+17:31:32.419461 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 14, kv.startChannels: map[3444764295159967059:map[14:{{2 0 3444764295159967059 14 GET true 4  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003dc900}]].
+17:31:32.419553 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.419553 coordinator, gid [100], server [2], finish send
+17:31:32.419553 gid [100], server [2], RequestIndex [14], get, return error type: OK, key: 4, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.419553 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 14, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.419553 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.419553 coordinator server [0], gid [100], client id [3444764295159967059], request index [13], shard index [1], get, key: 3, get result value: P-C6ge0q97hcSXduhP90.
+17:31:32.419553 coordinator server [0], gid [100], client id [3444764295159967059], request index [14], shard index [2], get, key: 4, get result value: 0vStQBjbWha8sPpbrnYO.
+17:31:32.419553 client [3444764295159967059], RequestIndex [15], start put/append request, shard [3], to gid [100], key: 5
+17:31:32.419553 client [3444764295159967059], RequestIndex [15], put/append request, shard [3], to gid [100], to server: &{KXx-yh_zpvSs-rQOU5pa 0xc00005c240 0xc00005c2a0}
+17:31:32.419553 client [3444764295159967059], RequestIndex [15], put/append request, shard [3], to gid [100], to server: &{QaVAaSp1k46sfNNmi8QF 0xc00005c240 0xc00005c2a0}
+17:31:32.419553 client [3444764295159967059], RequestIndex [15], put/append request, shard [3], to gid [100], to server: &{My1-DKEIb0pw3e7NfOqv 0xc00005c240 0xc00005c2a0}
+17:31:32.419553 gid [100], server [2], RequestIndex [15], get, key: 5, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.419553 gid [100], server [2], get start raft, key: 5, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.455457 coordinator server [2], gid [100], client id [3444764295159967059], request index [15], shard index [3], get, key: 5, get result value: UFGcJr0MboRp9OwcLcmr.
+17:31:32.455457 coordinator, gid [100], server [2], send
+17:31:32.455457 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 15, kv.startChannels: map[3444764295159967059:map[15:{{2 0 3444764295159967059 15 GET true 5  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003dc4e0}]].
+17:31:32.455457 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.455457 coordinator, gid [100], server [2], finish send
+17:31:32.455457 gid [100], server [2], RequestIndex [15], get, return error type: OK, key: 5, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.455457 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 15, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.455457 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.455520 client [3444764295159967059], RequestIndex [16], start put/append request, shard [4], to gid [100], key: 6
+17:31:32.455520 client [3444764295159967059], RequestIndex [16], put/append request, shard [4], to gid [100], to server: &{B9BWlOmhAt0KzZA63LIu 0xc00005c240 0xc00005c2a0}
+17:31:32.455520 client [3444764295159967059], RequestIndex [16], put/append request, shard [4], to gid [100], to server: &{shatj4Zf0RSohmN3fw_k 0xc00005c240 0xc00005c2a0}
+17:31:32.455520 coordinator server [1], gid [100], client id [3444764295159967059], request index [14], shard index [2], get, key: 4, get result value: 0vStQBjbWha8sPpbrnYO.
+17:31:32.455520 client [3444764295159967059], RequestIndex [16], put/append request, shard [4], to gid [100], to server: &{K1ncYBLkKaUPyN0kshP_ 0xc00005c240 0xc00005c2a0}
+17:31:32.455520 gid [100], server [2], RequestIndex [16], get, key: 6, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.455520 gid [100], server [2], get start raft, key: 6, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.486485 coordinator server [2], gid [100], client id [3444764295159967059], request index [16], shard index [4], get, key: 6, get result value: jRneS7fnglu28-lR0TC8.
+17:31:32.486485 coordinator, gid [100], server [2], send
+17:31:32.486485 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 16, kv.startChannels: map[3444764295159967059:map[16:{{2 0 3444764295159967059 16 GET true 6  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003dcf60}]].
+17:31:32.486485 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.486485 coordinator, gid [100], server [2], finish send
+17:31:32.486485 gid [100], server [2], RequestIndex [16], get, return error type: OK, key: 6, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.486485 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 16, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.486485 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.486485 coordinator server [1], gid [100], client id [3444764295159967059], request index [15], shard index [3], get, key: 5, get result value: UFGcJr0MboRp9OwcLcmr.
+17:31:32.486618 coordinator server [0], gid [100], client id [3444764295159967059], request index [15], shard index [3], get, key: 5, get result value: UFGcJr0MboRp9OwcLcmr.
+17:31:32.486618 client [3444764295159967059], RequestIndex [17], start put/append request, shard [5], to gid [100], key: 7
+17:31:32.486618 client [3444764295159967059], RequestIndex [17], put/append request, shard [5], to gid [100], to server: &{HguXiljk-yVnSPJymnum 0xc00005c240 0xc00005c2a0}
+17:31:32.486682 client [3444764295159967059], RequestIndex [17], put/append request, shard [5], to gid [100], to server: &{M1Z9_HrsHahC9pIulevt 0xc00005c240 0xc00005c2a0}
+17:31:32.486773 client [3444764295159967059], RequestIndex [17], put/append request, shard [5], to gid [100], to server: &{uKshqgkIgBAmtFbHwHMN 0xc00005c240 0xc00005c2a0}
+17:31:32.486773 gid [100], server [2], RequestIndex [17], get, key: 7, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.486773 gid [100], server [2], get start raft, key: 7, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.517261 coordinator server [1], gid [100], client id [3444764295159967059], request index [16], shard index [4], get, key: 6, get result value: jRneS7fnglu28-lR0TC8.
+17:31:32.517261 coordinator server [2], gid [100], client id [3444764295159967059], request index [17], shard index [5], get, key: 7, get result value: A3n7WnUOW0cZXJK0EsQm.
+17:31:32.517261 coordinator server [0], gid [100], client id [3444764295159967059], request index [16], shard index [4], get, key: 6, get result value: jRneS7fnglu28-lR0TC8.
+17:31:32.517261 coordinator, gid [100], server [2], send
+17:31:32.517261 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 17, kv.startChannels: map[3444764295159967059:map[17:{{2 0 3444764295159967059 17 GET true 7  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003dd4a0}]].
+17:31:32.517261 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.517261 coordinator, gid [100], server [2], finish send
+17:31:32.517261 gid [100], server [2], RequestIndex [17], get, return error type: OK, key: 7, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.517261 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 17, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.517261 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.517861 client [3444764295159967059], RequestIndex [18], start put/append request, shard [6], to gid [100], key: 8
+17:31:32.517861 client [3444764295159967059], RequestIndex [18], put/append request, shard [6], to gid [100], to server: &{iscumI1_vCagIlIy-d8R 0xc00005c240 0xc00005c2a0}
+17:31:32.517861 client [3444764295159967059], RequestIndex [18], put/append request, shard [6], to gid [100], to server: &{Gpf6soWD6S5EzJ3KMr_u 0xc00005c240 0xc00005c2a0}
+17:31:32.517861 client [3444764295159967059], RequestIndex [18], put/append request, shard [6], to gid [100], to server: &{kTEs3FQtyRIabbYaqYFg 0xc00005c240 0xc00005c2a0}
+17:31:32.517861 gid [100], server [2], RequestIndex [18], get, key: 8, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.517861 gid [100], server [2], get start raft, key: 8, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.547397 coordinator server [1], gid [100], client id [3444764295159967059], request index [17], shard index [5], get, key: 7, get result value: A3n7WnUOW0cZXJK0EsQm.
+17:31:32.547397 coordinator server [2], gid [100], client id [3444764295159967059], request index [18], shard index [6], get, key: 8, get result value: qRsvHJD3DMggkF3lVV_r.
+17:31:32.547397 coordinator, gid [100], server [2], send
+17:31:32.547397 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 18, kv.startChannels: map[3444764295159967059:map[18:{{2 0 3444764295159967059 18 GET true 8  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0003dda40}]].
+17:31:32.547397 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.547397 coordinator, gid [100], server [2], finish send
+17:31:32.547397 gid [100], server [2], RequestIndex [18], get, return error type: OK, key: 8, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.547397 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 18, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.547397 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.547397 client [3444764295159967059], RequestIndex [19], start put/append request, shard [7], to gid [100], key: 9
+17:31:32.547397 client [3444764295159967059], RequestIndex [19], put/append request, shard [7], to gid [100], to server: &{d3CxI-GpbOwtYMqIRl5V 0xc00005c240 0xc00005c2a0}
+17:31:32.547790 coordinator server [0], gid [100], client id [3444764295159967059], request index [17], shard index [5], get, key: 7, get result value: A3n7WnUOW0cZXJK0EsQm.
+17:31:32.547790 coordinator server [0], gid [100], client id [3444764295159967059], request index [18], shard index [6], get, key: 8, get result value: qRsvHJD3DMggkF3lVV_r.
+17:31:32.547790 client [3444764295159967059], RequestIndex [19], put/append request, shard [7], to gid [100], to server: &{5rxR-p094d7MmxSWAmC9 0xc00005c240 0xc00005c2a0}
+17:31:32.547790 client [3444764295159967059], RequestIndex [19], put/append request, shard [7], to gid [100], to server: &{2vIE4pgdGSGqJCrakKEA 0xc00005c240 0xc00005c2a0}
+17:31:32.547790 gid [100], server [2], RequestIndex [19], get, key: 9, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.547790 gid [100], server [2], get start raft, key: 9, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.578929 coordinator server [2], gid [100], client id [3444764295159967059], request index [19], shard index [7], get, key: 9, get result value: Sqi1wJM57UAYwfWRD3Ro.
+17:31:32.579019 coordinator, gid [100], server [2], send
+17:31:32.579019 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 19, kv.startChannels: map[3444764295159967059:map[19:{{2 0 3444764295159967059 19 GET true 9  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc000569320}]].
+17:31:32.579019 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.579019 coordinator, gid [100], server [2], finish send
+17:31:32.579019 coordinator server [1], gid [100], client id [3444764295159967059], request index [18], shard index [6], get, key: 8, get result value: qRsvHJD3DMggkF3lVV_r.
+17:31:32.579078 gid [100], server [2], RequestIndex [19], get, return error type: OK, key: 9, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.579078 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 19, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.579078 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.579078 --- Join 1 ---
+17:31:32.579078 coordinator server [0], gid [100], client id [3444764295159967059], request index [19], shard index [7], get, key: 9, get result value: Sqi1wJM57UAYwfWRD3Ro.
+17:31:32.610611 coordinator server [1], gid [100], client id [3444764295159967059], request index [19], shard index [7], get, key: 9, get result value: Sqi1wJM57UAYwfWRD3Ro.
+17:31:32.610870 --- Shut Down Section 0 ---
+17:31:32.610870 --- Join 2 ---
+17:31:32.641508 --- Leave 0 ---
+17:31:32.672503 --- Leave 1 ---
+17:31:32.672503 gid [101], server [1], shard config Ticker, new config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, cur config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}.
+17:31:32.702608 coordinator server [1], gid [101], handle InstallShardConfig, config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.702608 coordinator server [1], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [101 101 101 101 101 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.702608 --- Append Section 0 ---
+17:31:32.702608 client [3444764295159967059], RequestIndex [20], start put/append request, shard [8], to gid [100], key: 0
+17:31:32.702608 gid [102], server [1], shard config Ticker, new config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, cur config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}.
+17:31:32.702608 client [3444764295159967059], RequestIndex [20], put/append request, shard [8], to gid [100], to server: &{ggqmAWPtgCNwBo-HIRa8 0xc00005c240 0xc00005c2a0}
+17:31:32.702608 gid [100], server [2], shard config Ticker, new config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, cur config: {1 [100 100 100 100 100 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2]]}.
+17:31:32.718670 client [3444764295159967059], RequestIndex [20], put/append request, shard [8], to gid [100], to server: &{Upbpd6mKZBOoLqlZQwlq 0xc00005c240 0xc00005c2a0}
+17:31:32.718859 client [3444764295159967059], RequestIndex [20], put/append request, shard [8], to gid [100], to server: &{Ph1mIolML6ATK9mFCzfD 0xc00005c240 0xc00005c2a0}
+17:31:32.718859 gid [100], server [2], RequestIndex [20], get, key: 0, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.718859 gid [100], server [2], get start raft, key: 0, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.734342 coordinator server [1], gid [102], handle InstallShardConfig, config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.734342 coordinator server [1], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [101 101 101 101 101 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.734419 coordinator server [2], gid [101], handle InstallShardConfig, config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.734419 coordinator server [2], gid [100], handle InstallShardConfig, config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.734419 coordinator server [2], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [101 101 101 101 101 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.734419 coordinator server [2], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:2 8:2 9:2], op config's shards arrangement: [101 101 101 101 101 100 100 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.734419 coordinator server [2], gid [100], client id [3444764295159967059], request index [20], shard index [8], get, key: 0, get result value: uPI_P357eumTC5en9hdW.
+17:31:32.734419 coordinator, gid [100], server [2], send
+17:31:32.734419 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 20, kv.startChannels: map[3444764295159967059:map[20:{{2 0 3444764295159967059 20 GET true 0  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc0005690e0}]].
+17:31:32.734419 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.734419 coordinator, gid [100], server [2], finish send
+17:31:32.734419 gid [100], server [2], RequestIndex [20], get, return error type: OK, key: 0, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.734532 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 20, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.734532 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.734532 --- Append 0 ---
+17:31:32.734532 client [3444764295159967059], RequestIndex [21], start put/append request, shard [8], to gid [100], key: 0, value: jEisOPOSmd35RGYl9IzW
+17:31:32.734532 client [3444764295159967059], RequestIndex [21], put/append, to shard [8], gid [100], request to server &{7tM0Vl_p3BkRGphgpvC2 0xc00005c240 0xc00005c2a0}
+17:31:32.765225 gid [101], server [1], in acquireShardTicker(), lagging shards:[0 1 2 3 4], config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.765225 gid [101], server [1], acquire shard with sid [4].
+17:31:32.765225 gid [101], server [1], acquire shard with sid [0].
+17:31:32.765225 gid [101], server [1], acquire shard with sid [2].
+17:31:32.765225 gid [101], server [1], acquire shard with sid [3].
+17:31:32.765225 gid [101], server [1], acquire shard with sid [1].
+17:31:32.765225 coordinator server [2], gid [102], handle InstallShardConfig, config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.765225 coordinator server [2], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [101 101 101 101 101 100 100 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.765591 coordinator server [1], gid [100], handle InstallShardConfig, config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.765591 coordinator server [1], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:2 8:2 9:2], op config's shards arrangement: [101 101 101 101 101 100 100 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.765762 coordinator server [1], gid [100], client id [3444764295159967059], request index [20], shard index [8], get, key: 0, get result value: uPI_P357eumTC5en9hdW.
+17:31:32.780449 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[3].
+17:31:32.780449 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[3].
+17:31:32.780449 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[1].
+17:31:32.780449 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[1].
+17:31:32.780613 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[3].
+17:31:32.780613 gid [100], server [2], acquire shard OK, args config num [1], reply config num [2], shard timestamp [1], reply/og data: {map[5:UFGcJr0MboRp9OwcLcmr]} vs {map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:32.780613 gid [101], server [1], acquireShards ok, sid [3], reply config num: 2, reply timestamp: 1, cur time stamp: 2.
+17:31:32.780613 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[1].
+17:31:32.780613 gid [100], server [2], acquire shard OK, args config num [1], reply config num [2], shard timestamp [1], reply/og data: {map[3:P-C6ge0q97hcSXduhP90]} vs {map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:32.780613 gid [101], server [1], acquireShards ok, sid [1], reply config num: 2, reply timestamp: 1, cur time stamp: 2.
+17:31:32.795877 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [3], local vs op timestamp: 0/2, local vs op kv store: {map[]}/{map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:32.795877 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 0/2, local vs op kv store: {map[]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:32.795877 gid [101], server [1], shard config Ticker, new config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, cur config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}.
+17:31:32.821568 gid [101], server [1], in acquireShardTicker(), lagging shards:[0 2 4], config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}, timestamp: map[0:0 1:2 2:0 3:2 4:0 5:0 6:0 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.821568 gid [101], server [1], acquire shard with sid [4].
+17:31:32.821748 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [3], local vs op timestamp: 0/2, local vs op kv store: {map[]}/{map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:32.821748 gid [100], server [2], shard config Ticker, new config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, cur config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}.
+17:31:32.821748 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 0/2, local vs op kv store: {map[]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:32.821748 gid [102], server [1], shard config Ticker, new config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, cur config: {2 [101 101 101 101 101 100 100 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2]]}.
+17:31:32.821748 gid [101], server [1], acquire shard with sid [0].
+17:31:32.821748 gid [101], server [1], acquire shard with sid [2].
+17:31:32.821748 coordinator server [1], gid [101], handle InstallShardConfig, config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.821748 coordinator server [1], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:3 2:3 3:3 4:3 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 101 101 101 101 102 102 100 100 100], kv store: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.826191 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[2].
+17:31:32.826191 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[2].
+17:31:32.826191 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[2].
+17:31:32.826191 gid [100], server [2], acquire shard OK, args config num [1], reply config num [2], shard timestamp [1], reply/og data: {map[4:0vStQBjbWha8sPpbrnYO]} vs {map[4:0vStQBjbWha8sPpbrnYO]}.
+17:31:32.826191 gid [101], server [1], acquireShards ok, sid [2], reply config num: 2, reply timestamp: 1, cur time stamp: 3.
+17:31:32.841695 client [3444764295159967059], RequestIndex [21], put/append, to shard [8], gid [100], request to server &{5CdmZnCirFynj3YA8BJo 0xc00005c240 0xc00005c2a0}
+17:31:32.841695 client [3444764295159967059], RequestIndex [21], put/append, to shard [8], gid [100], request to server &{ZYufMH4khxJZCb5yvT2K 0xc00005c240 0xc00005c2a0}
+17:31:32.841695 gid [100], server [2], RequestIndex [21], APPEND, key: 0, value: jEisOPOSmd35RGYl9IzW, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.841695 gid [100], server [2], RequestIndex [21], APPEND start raft, key: 0, value: jEisOPOSmd35RGYl9IzW, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.857151 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[0].
+17:31:32.857151 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[0].
+17:31:32.857253 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[0].
+17:31:32.857253 gid [100], server [2], acquire shard OK, args config num [1], reply config num [2], shard timestamp [1], reply/og data: {map[2:TbwXp__fYjjm16rroQV3]} vs {map[2:TbwXp__fYjjm16rroQV3]}.
+17:31:32.857253 gid [101], server [1], acquireShards ok, sid [0], reply config num: 2, reply timestamp: 1, cur time stamp: 3.
+17:31:32.857253 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 3/2, local vs op kv store: {map[]}/{map[4:0vStQBjbWha8sPpbrnYO]}.
+17:31:32.857253 coordinator server [1], gid [102], handle InstallShardConfig, config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.857253 coordinator server [1], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 101 101 101 101 102 102 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.857253 coordinator server [2], gid [100], handle InstallShardConfig, config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.857253 coordinator server [2], gid [101], handle InstallShardConfig, config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.857253 coordinator server [2], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:3 8:3 9:3], op config's shards arrangement: [102 101 101 101 101 102 102 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.857253 coordinator server [2], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:3 2:3 3:3 4:3 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 101 101 101 101 102 102 100 100 100], kv store: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.857253 coordinator server [2], gid [100], client id [3444764295159967059], request index [21], shard index [8], APPEND, key: 0, value: jEisOPOSmd35RGYl9IzW, result after append: uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW..
+17:31:32.857253 coordinator, gid [100], server [2], send
+17:31:32.857253 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[4].
+17:31:32.857253 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[4].
+17:31:32.857253 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 21, kv.startChannels: map[3444764295159967059:map[21:{{2 0 3444764295159967059 21 APPEND true 0 jEisOPOSmd35RGYl9IzW {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc000568780}]].
+17:31:32.857253 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.857253 coordinator, gid [100], server [2], finish send
+17:31:32.857253 gid [100], server [2], RequestIndex [21], APPEND, return error type: OK, key: 0, value: jEisOPOSmd35RGYl9IzW, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.857652 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 21, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.857652 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.857652 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[4].
+17:31:32.857652 gid [100], server [2], acquire shard OK, args config num [1], reply config num [3], shard timestamp [1], reply/og data: {map[6:jRneS7fnglu28-lR0TC8]} vs {map[6:jRneS7fnglu28-lR0TC8]}.
+17:31:32.857721 client [3444764295159967059], RequestIndex [22], start put/append request, shard [9], to gid [100], key: 1
+17:31:32.857721 client [3444764295159967059], RequestIndex [22], put/append request, shard [9], to gid [100], to server: &{kukq-ceOQ0I51smzFZuo 0xc00005c240 0xc00005c2a0}
+17:31:32.857721 gid [101], server [1], acquireShards ok, sid [4], reply config num: 3, reply timestamp: 1, cur time stamp: 3.
+17:31:32.872855 gid [102], server [1], in acquireShardTicker(), lagging shards:[0 5 6], config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.872855 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[0].
+17:31:32.872855 gid [102], server [1], acquire shard with sid [6].
+17:31:32.872855 gid [102], server [1], acquire shard with sid [0].
+17:31:32.872855 gid [102], server [1], acquire shard with sid [5].
+17:31:32.872855 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[0].
+17:31:32.872855 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[4].
+17:31:32.872855 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[4].
+17:31:32.873050 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[4].
+17:31:32.873050 gid [100], server [2], acquire shard OK, args config num [1], reply config num [3], shard timestamp [1], reply/og data: {map[6:jRneS7fnglu28-lR0TC8]} vs {map[6:jRneS7fnglu28-lR0TC8]}.
+17:31:32.873050 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[0].
+17:31:32.873050 gid [100], server [2], acquire shard OK, args config num [1], reply config num [3], shard timestamp [1], reply/og data: {map[2:TbwXp__fYjjm16rroQV3]} vs {map[2:TbwXp__fYjjm16rroQV3]}.
+17:31:32.873050 gid [101], server [1], acquireShards ok, sid [4], reply config num: 3, reply timestamp: 1, cur time stamp: 3.
+17:31:32.873050 gid [101], server [1], acquireShards ok, sid [0], reply config num: 3, reply timestamp: 1, cur time stamp: 3.
+17:31:32.888057 gid [100], server [1],received AcquireShards from gid [102], config num [2], shard index[5].
+17:31:32.888057 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [2], shard index[5].
+17:31:32.888057 gid [101], server [1],received AcquireShards from gid [102], config num [2], shard index[0].
+17:31:32.888057 gid [101], server [1], acquire shard OK, args config num [2], reply config num [3], shard timestamp [0], reply/og data: {map[]} vs {map[]}.
+17:31:32.888057 gid [102], server [1], acquireShards ok, sid [0], reply config num: 3, reply timestamp: 0, cur time stamp: 3.
+17:31:32.888122 gid [100], server [2],received AcquireShards from gid [102], config num [2], shard index[5].
+17:31:32.888122 gid [100], server [2], acquire shard OK, args config num [2], reply config num [3], shard timestamp [2], reply/og data: {map[7:A3n7WnUOW0cZXJK0EsQm]} vs {map[7:A3n7WnUOW0cZXJK0EsQm]}.
+17:31:32.888122 gid [102], server [1], acquireShards ok, sid [5], reply config num: 3, reply timestamp: 2, cur time stamp: 3.
+17:31:32.888234 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [0], local vs op timestamp: 0/2, local vs op kv store: {map[]}/{map[2:TbwXp__fYjjm16rroQV3]}.
+17:31:32.888234 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 3/2, local vs op kv store: {map[]}/{map[4:0vStQBjbWha8sPpbrnYO]}.
+17:31:32.888234 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 3/3, local vs op kv store: {map[]}/{map[6:jRneS7fnglu28-lR0TC8]}.
+17:31:32.888295 coordinator server [2], gid [102], handle InstallShardConfig, config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.888295 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [0], local vs op timestamp: 0/3, local vs op kv store: {map[]}/{map[]}.
+17:31:32.888295 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 3/3, local vs op kv store: {map[]}/{map[6:jRneS7fnglu28-lR0TC8]}.
+17:31:32.888295 coordinator server [2], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 101 101 101 101 102 102 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.888347 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [0], local vs op timestamp: 2/3, local vs op kv store: {map[2:TbwXp__fYjjm16rroQV3]}/{map[2:TbwXp__fYjjm16rroQV3]}.
+17:31:32.888347 coordinator server [1], gid [100], handle InstallShardConfig, config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.888347 coordinator server [1], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:3 8:3 9:3], op config's shards arrangement: [102 101 101 101 101 102 102 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.888347 coordinator server [1], gid [100], client id [3444764295159967059], request index [21], shard index [8], APPEND, key: 0, value: jEisOPOSmd35RGYl9IzW, result after append: uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW..
+17:31:32.903071 client [3444764295159967059], RequestIndex [22], put/append request, shard [9], to gid [100], to server: &{xIj3w3o2QwoXvumsiuuN 0xc00005c240 0xc00005c2a0}
+17:31:32.903163 gid [100], server [1],received AcquireShards from gid [101], config num [1], shard index[2].
+17:31:32.903163 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [101], config num [1], shard index[2].
+17:31:32.903163 client [3444764295159967059], RequestIndex [22], put/append request, shard [9], to gid [100], to server: &{viWFQa3m1_uYTcbs952S 0xc00005c240 0xc00005c2a0}
+17:31:32.903163 gid [100], server [2],received AcquireShards from gid [101], config num [1], shard index[2].
+17:31:32.903163 gid [100], server [2], acquire shard OK, args config num [1], reply config num [3], shard timestamp [1], reply/og data: {map[4:0vStQBjbWha8sPpbrnYO]} vs {map[4:0vStQBjbWha8sPpbrnYO]}.
+17:31:32.903163 gid [100], server [2], RequestIndex [22], get, key: 1, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.903163 gid [100], server [2], get start raft, key: 1, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.903163 gid [101], server [1], acquireShards ok, sid [2], reply config num: 3, reply timestamp: 1, cur time stamp: 3.
+17:31:32.918635 coordinator server [2], gid [100], client id [3444764295159967059], request index [22], shard index [9], get, key: 1, get result value: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.918635 coordinator, gid [100], server [2], send
+17:31:32.918635 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 22, kv.startChannels: map[3444764295159967059:map[22:{{2 0 3444764295159967059 22 GET true 1  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc000525260}]].
+17:31:32.918635 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.918635 coordinator, gid [100], server [2], finish send
+17:31:32.918635 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [5], local vs op timestamp: 0/3, local vs op kv store: {map[]}/{map[7:A3n7WnUOW0cZXJK0EsQm]}.
+17:31:32.918635 gid [101], server [1], shard config Ticker, new config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, cur config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}.
+17:31:32.918635 gid [100], server [2], RequestIndex [22], get, return error type: OK, key: 1, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.918974 StartCh= kvserver: 2, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 22, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.918974 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [0], local vs op timestamp: 0/3, local vs op kv store: {map[]}/{map[]}.
+17:31:32.918974 StartCh= ShardKV: 2, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:32.918974 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [0], local vs op timestamp: 0/2, local vs op kv store: {map[]}/{map[2:TbwXp__fYjjm16rroQV3]}.
+17:31:32.918974 --- Append 1 ---
+17:31:32.918974 client [3444764295159967059], RequestIndex [23], start put/append request, shard [9], to gid [100], key: 1, value: HMPU_UIO-L7CfKLAJekW
+17:31:32.918974 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [100], request to server &{sDHLF1EIA7liugOOkJAU 0xc00005c240 0xc00005c2a0}
+17:31:32.918974 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 3/3, local vs op kv store: {map[]}/{map[6:jRneS7fnglu28-lR0TC8]}.
+17:31:32.918974 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 3/3, local vs op kv store: {map[]}/{map[6:jRneS7fnglu28-lR0TC8]}.
+17:31:32.918974 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [0], local vs op timestamp: 2/3, local vs op kv store: {map[2:TbwXp__fYjjm16rroQV3]}/{map[2:TbwXp__fYjjm16rroQV3]}.
+17:31:32.918974 coordinator server [1], gid [101], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 3/3, local vs op kv store: {map[]}/{map[4:0vStQBjbWha8sPpbrnYO]}.
+17:31:32.933339 gid [102], server [1], in acquireShardTicker(), lagging shards:[6], config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:3 1:0 2:0 3:0 4:0 5:3 6:0 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.933339 gid [102], server [1], acquire shard with sid [6].
+17:31:32.948601 gid [100], server [1],received AcquireShards from gid [102], config num [2], shard index[6].
+17:31:32.948800 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [5], local vs op timestamp: 0/3, local vs op kv store: {map[]}/{map[7:A3n7WnUOW0cZXJK0EsQm]}.
+17:31:32.948800 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [2], shard index[6].
+17:31:32.948800 gid [100], server [2],received AcquireShards from gid [102], config num [2], shard index[6].
+17:31:32.948800 gid [100], server [2], acquire shard OK, args config num [2], reply config num [3], shard timestamp [2], reply/og data: {map[8:qRsvHJD3DMggkF3lVV_r]} vs {map[8:qRsvHJD3DMggkF3lVV_r]}.
+17:31:32.948800 coordinator server [1], gid [101], handle InstallShardConfig, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.948800 gid [102], server [1], acquireShards ok, sid [6], reply config num: 3, reply timestamp: 2, cur time stamp: 3.
+17:31:32.948800 coordinator server [1], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:3 1:3 2:3 3:3 4:3 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 100 102 100 102 102 102 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.948800 coordinator server [1], gid [100], client id [3444764295159967059], request index [22], shard index [9], get, key: 1, get result value: hqCOOODdaWbmHuYNBQ3Z.
+17:31:32.949308 coordinator server [2], gid [101], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 3/3, local vs op kv store: {map[]}/{map[4:0vStQBjbWha8sPpbrnYO]}.
+17:31:32.949308 gid [100], server [2], shard config Ticker, new config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, cur config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}.
+17:31:32.949308 gid [102], server [1], shard config Ticker, new config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, cur config: {3 [102 101 101 101 101 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 101:[server-101-0 server-101-1 server-101-2] 102:[server-102-0 server-102-1 server-102-2]]}.
+17:31:32.978608 coordinator server [2], gid [101], handle InstallShardConfig, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.978608 coordinator server [2], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:3 1:3 2:3 3:3 4:3 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 100 102 100 102 102 102 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.978608 coordinator server [2], gid [100], handle InstallShardConfig, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.978608 coordinator server [2], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:4 8:4 9:4], op config's shards arrangement: [102 100 102 100 102 102 102 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.978608 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [6], local vs op timestamp: 0/3, local vs op kv store: {map[]}/{map[8:qRsvHJD3DMggkF3lVV_r]}.
+17:31:32.978608 coordinator server [1], gid [102], handle InstallShardConfig, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.979107 coordinator server [1], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:4 1:0 2:0 3:0 4:0 5:4 6:4 7:0 8:0 9:0], op config's shards arrangement: [102 100 102 100 102 102 102 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.993767 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [100], request to server &{SuWpOtzZgjssLlHyF-JN 0xc00005c240 0xc00005c2a0}
+17:31:32.993767 gid [102], server [1], in acquireShardTicker(), lagging shards:[2 4], config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:4 1:0 2:0 3:0 4:0 5:4 6:4 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:32.993767 gid [102], server [1], acquire shard with sid [4].
+17:31:32.993767 gid [102], server [1], acquire shard with sid [2].
+17:31:32.993767 gid [100], server [2], in acquireShardTicker(), lagging shards:[1 3], config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:4 8:4 9:4], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.993767 gid [100], server [2], acquire shard with sid [3].
+17:31:32.993767 gid [100], server [2], acquire shard with sid [1].
+17:31:32.993972 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [100], request to server &{n7BEAZlzyAB9qKDDGOz6 0xc00005c240 0xc00005c2a0}
+17:31:32.993972 gid [100], server [2], RequestIndex [23], APPEND, key: 1, value: HMPU_UIO-L7CfKLAJekW, ShardKVStore: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:32.993972 gid [100], server [2], APPEND, config not up to date, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:4 8:4 9:4].
+17:31:33.008672 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [6], local vs op timestamp: 0/3, local vs op kv store: {map[]}/{map[8:qRsvHJD3DMggkF3lVV_r]}.
+17:31:33.008672 coordinator server [1], gid [100], handle InstallShardConfig, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.008672 coordinator server [1], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:1 4:1 5:2 6:2 7:4 8:4 9:4], op config's shards arrangement: [102 100 102 100 102 102 102 100 100 100], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.008988 coordinator server [2], gid [102], handle InstallShardConfig, config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.008988 coordinator server [2], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:4 1:0 2:0 3:0 4:0 5:4 6:4 7:0 8:0 9:0], op config's shards arrangement: [102 100 102 100 102 102 102 100 100 100], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.024802 gid [100], server [1],received AcquireShards from gid [102], config num [2], shard index[6].
+17:31:33.024802 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [2], shard index[6].
+17:31:33.024802 gid [101], server [1],received AcquireShards from gid [100], config num [3], shard index[3].
+17:31:33.024802 gid [101], server [1], acquire shard OK, args config num [3], reply config num [4], shard timestamp [3], reply/og data: {map[5:UFGcJr0MboRp9OwcLcmr]} vs {map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:33.025078 gid [100], server [2], acquireShards ok, sid [3], reply config num: 4, reply timestamp: 3, cur time stamp: 4.
+17:31:33.025078 gid [100], server [2],received AcquireShards from gid [102], config num [2], shard index[6].
+17:31:33.025078 gid [100], server [2], acquire shard OK, args config num [2], reply config num [4], shard timestamp [2], reply/og data: {map[8:qRsvHJD3DMggkF3lVV_r]} vs {map[8:qRsvHJD3DMggkF3lVV_r]}.
+17:31:33.025078 gid [102], server [1], acquireShards ok, sid [6], reply config num: 4, reply timestamp: 2, cur time stamp: 4.
+17:31:33.040841 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [6], local vs op timestamp: 4/4, local vs op kv store: {map[8:qRsvHJD3DMggkF3lVV_r]}/{map[8:qRsvHJD3DMggkF3lVV_r]}.
+17:31:33.040841 coordinator server [2], gid [100], request index [0], handle AcquireShard, shard id [3], local vs op timestamp: 1/4, local vs op kv store: {map[5:UFGcJr0MboRp9OwcLcmr]}/{map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:33.040841 gid [101], server [1], shard config Ticker, new config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, cur config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}.
+17:31:33.055968 gid [102], server [1], in acquireShardTicker(), lagging shards:[2 4], config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:4 1:0 2:0 3:0 4:0 5:4 6:4 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.055968 gid [102], server [1], acquire shard with sid [4].
+17:31:33.055968 gid [100], server [2], in acquireShardTicker(), lagging shards:[1], config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:1 1:1 2:1 3:4 4:1 5:2 6:2 7:4 8:4 9:4], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.055968 gid [100], server [2], acquire shard with sid [1].
+17:31:33.055968 gid [101], server [1],received AcquireShards from gid [102], config num [3], shard index[2].
+17:31:33.056193 gid [102], server [1], acquire shard with sid [2].
+17:31:33.056193 gid [101], server [1], acquire shard OK, args config num [3], reply config num [4], shard timestamp [3], reply/og data: {map[]} vs {map[]}.
+17:31:33.056259 gid [102], server [1], acquireShards ok, sid [2], reply config num: 4, reply timestamp: 3, cur time stamp: 4.
+17:31:33.071507 gid [101], server [1],received AcquireShards from gid [102], config num [3], shard index[4].
+17:31:33.071507 gid [101], server [1], acquire shard OK, args config num [3], reply config num [4], shard timestamp [3], reply/og data: {map[]} vs {map[]}.
+17:31:33.071650 gid [102], server [1], acquireShards ok, sid [4], reply config num: 4, reply timestamp: 3, cur time stamp: 4.
+17:31:33.071650 coordinator server [1], gid [100], request index [0], handle AcquireShard, shard id [3], local vs op timestamp: 1/4, local vs op kv store: {map[5:UFGcJr0MboRp9OwcLcmr]}/{map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:33.071650 coordinator server [1], gid [101], handle InstallShardConfig, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.071650 coordinator server [1], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:3 1:3 2:3 3:3 4:3 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 102 102 102 102 102 102 102 102 102], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.071650 gid [102], server [1], shard config Ticker, new config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, cur config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}.
+17:31:33.071650 gid [100], server [2], shard config Ticker, new config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, cur config: {4 [102 100 102 100 102 102 102 100 100 100] map[100:[server-100-0 server-100-1 server-100-2] 102:[server-102-0 server-102-1 server-102-2]]}.
+17:31:33.071650 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [6], local vs op timestamp: 4/4, local vs op kv store: {map[8:qRsvHJD3DMggkF3lVV_r]}/{map[8:qRsvHJD3DMggkF3lVV_r]}.
+17:31:33.071650 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 0/4, local vs op kv store: {map[]}/{map[]}.
+17:31:33.071650 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 0/4, local vs op kv store: {map[]}/{map[]}.
+17:31:33.087222 gid [101], server [1],received AcquireShards from gid [100], config num [3], shard index[1].
+17:31:33.087222 gid [101], server [1], acquire shard OK, args config num [3], reply config num [5], shard timestamp [3], reply/og data: {map[3:P-C6ge0q97hcSXduhP90]} vs {map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.087340 gid [100], server [2], acquireShards ok, sid [1], reply config num: 5, reply timestamp: 3, cur time stamp: 4.
+17:31:33.102073 coordinator server [2], gid [100], handle InstallShardConfig, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.102073 coordinator server [2], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:4 4:1 5:2 6:2 7:4 8:4 9:4], op config's shards arrangement: [102 102 102 102 102 102 102 102 102 102], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.102254 coordinator server [2], gid [100], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 1/5, local vs op kv store: {map[3:P-C6ge0q97hcSXduhP90]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.102254 gid [101], server [1],received AcquireShards from gid [100], config num [3], shard index[1].
+17:31:33.102254 gid [101], server [1], acquire shard OK, args config num [3], reply config num [5], shard timestamp [3], reply/og data: {map[3:P-C6ge0q97hcSXduhP90]} vs {map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.102254 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 0/4, local vs op kv store: {map[]}/{map[]}.
+17:31:33.102254 gid [100], server [2], acquireShards ok, sid [1], reply config num: 5, reply timestamp: 3, cur time stamp: 5.
+17:31:33.102254 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 0/4, local vs op kv store: {map[]}/{map[]}.
+17:31:33.102380 coordinator server [1], gid [102], handle InstallShardConfig, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.102380 coordinator server [2], gid [101], handle InstallShardConfig, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.102380 coordinator server [1], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:5 1:0 2:5 3:0 4:5 5:5 6:5 7:0 8:0 9:0], op config's shards arrangement: [102 102 102 102 102 102 102 102 102 102], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.102380 coordinator server [2], gid [101], request index [0], handle InstallShardConfig, current shard timestamp: map[0:3 1:3 2:3 3:3 4:3 5:0 6:0 7:0 8:0 9:0], op config's shards arrangement: [102 102 102 102 102 102 102 102 102 102], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[]} 6:{map[]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.117114 gid [102], server [1], in acquireShardTicker(), lagging shards:[1 3 7 8 9], config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:5 1:0 2:5 3:0 4:5 5:5 6:5 7:0 8:0 9:0], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.117114 gid [102], server [1], acquire shard with sid [9].
+17:31:33.117114 gid [102], server [1], acquire shard with sid [3].
+17:31:33.117114 gid [102], server [1], acquire shard with sid [7].
+17:31:33.117114 gid [102], server [1], acquire shard with sid [1].
+17:31:33.117114 gid [102], server [1], acquire shard with sid [8].
+17:31:33.132640 gid [100], server [1],received AcquireShards from gid [102], config num [4], shard index[3].
+17:31:33.132640 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [4], shard index[3].
+17:31:33.132713 gid [100], server [2],received AcquireShards from gid [102], config num [4], shard index[3].
+17:31:33.132713 gid [100], server [2], acquire shard OK, args config num [4], reply config num [5], shard timestamp [4], reply/og data: {map[5:UFGcJr0MboRp9OwcLcmr]} vs {map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:33.132713 gid [102], server [1], acquireShards ok, sid [3], reply config num: 5, reply timestamp: 4, cur time stamp: 5.
+17:31:33.132849 client [3444764295159967059], RequestIndex [23], start put/append request, shard [9], to gid [102], key: 1, value: HMPU_UIO-L7CfKLAJekW
+17:31:33.132849 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [102], request to server &{01gvqwSdq8TvqrspEqEr 0xc00005c240 0xc00005c2a0}
+17:31:33.132640 gid [101], server [1],received AcquireShards from gid [102], config num [3], shard index[4].
+17:31:33.132849 gid [101], server [1], acquire shard OK, args config num [3], reply config num [5], shard timestamp [3], reply/og data: {map[]} vs {map[]}.
+17:31:33.132849 coordinator server [1], gid [100], handle InstallShardConfig, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.132849 gid [102], server [1], acquireShards ok, sid [4], reply config num: 5, reply timestamp: 3, cur time stamp: 5.
+17:31:33.132849 coordinator server [1], gid [100], request index [0], handle InstallShardConfig, current shard timestamp: map[0:1 1:1 2:1 3:4 4:1 5:2 6:2 7:4 8:4 9:4], op config's shards arrangement: [102 102 102 102 102 102 102 102 102 102], kv store: map[0:{map[2:TbwXp__fYjjm16rroQV3]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[4:0vStQBjbWha8sPpbrnYO]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[6:jRneS7fnglu28-lR0TC8]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.132849 coordinator server [2], gid [102], handle InstallShardConfig, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.133142 coordinator server [2], gid [102], request index [0], handle InstallShardConfig, current shard timestamp: map[0:5 1:0 2:5 3:0 4:5 5:5 6:5 7:0 8:0 9:0], op config's shards arrangement: [102 102 102 102 102 102 102 102 102 102], kv store: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.133142 coordinator server [1], gid [100], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 1/5, local vs op kv store: {map[3:P-C6ge0q97hcSXduhP90]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.133504 coordinator server [2], gid [100], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 5/5, local vs op kv store: {map[3:P-C6ge0q97hcSXduhP90]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.143337 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [102], request to server &{Z899AvSJtV8YJkajBliK 0xc00005c240 0xc00005c2a0}
+17:31:33.143337 gid [100], server [1],received AcquireShards from gid [102], config num [4], shard index[8].
+17:31:33.143337 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [4], shard index[8].
+17:31:33.143337 gid [102], server [1], RequestIndex [23], APPEND, key: 1, value: HMPU_UIO-L7CfKLAJekW, ShardKVStore: map[0:{map[]} 1:{map[]} 2:{map[]} 3:{map[]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[]} 8:{map[]} 9:{map[]}].
+17:31:33.143337 gid [102], server [1], APPEND, config not up to date, config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:5 1:0 2:5 3:0 4:5 5:5 6:5 7:0 8:0 9:0].
+17:31:33.143337 gid [100], server [1],received AcquireShards from gid [102], config num [4], shard index[1].
+17:31:33.143337 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [4], shard index[1].
+17:31:33.143337 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [102], request to server &{UYjbG5v6H1dXHJ58n4MP 0xc00005c240 0xc00005c2a0}
+17:31:33.143337 gid [100], server [2],received AcquireShards from gid [102], config num [4], shard index[8].
+17:31:33.143337 gid [100], server [2], acquire shard OK, args config num [4], reply config num [5], shard timestamp [4], reply/og data: {map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} vs {map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]}.
+17:31:33.143337 gid [102], server [1], acquireShards ok, sid [8], reply config num: 5, reply timestamp: 4, cur time stamp: 5.
+17:31:33.143337 gid [100], server [2],received AcquireShards from gid [102], config num [4], shard index[1].
+17:31:33.143337 gid [100], server [2], acquire shard OK, args config num [4], reply config num [5], shard timestamp [5], reply/og data: {map[3:P-C6ge0q97hcSXduhP90]} vs {map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.143337 gid [100], server [1],received AcquireShards from gid [102], config num [4], shard index[7].
+17:31:33.143337 gid [102], server [1], acquireShards ok, sid [1], reply config num: 5, reply timestamp: 5, cur time stamp: 5.
+17:31:33.143337 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [4], shard index[7].
+17:31:33.143337 gid [100], server [2],received AcquireShards from gid [102], config num [4], shard index[7].
+17:31:33.143337 gid [100], server [2], acquire shard OK, args config num [4], reply config num [5], shard timestamp [4], reply/og data: {map[9:Sqi1wJM57UAYwfWRD3Ro]} vs {map[9:Sqi1wJM57UAYwfWRD3Ro]}.
+17:31:33.143337 gid [102], server [1], acquireShards ok, sid [7], reply config num: 5, reply timestamp: 4, cur time stamp: 5.
+17:31:33.148355 gid [101], server [1],received AcquireShards from gid [102], config num [3], shard index[2].
+17:31:33.148355 gid [101], server [1], acquire shard OK, args config num [3], reply config num [5], shard timestamp [3], reply/og data: {map[]} vs {map[]}.
+17:31:33.148355 gid [102], server [1], acquireShards ok, sid [2], reply config num: 5, reply timestamp: 3, cur time stamp: 5.
+17:31:33.163619 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [3], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:33.163619 coordinator server [1], gid [100], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 5/5, local vs op kv store: {map[3:P-C6ge0q97hcSXduhP90]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.163619 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 5/5, local vs op kv store: {map[]}/{map[]}.
+17:31:33.163619 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [8], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]}.
+17:31:33.163619 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.163619 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [7], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[9:Sqi1wJM57UAYwfWRD3Ro]}.
+17:31:33.163619 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 5/5, local vs op kv store: {map[]}/{map[]}.
+17:31:33.178929 gid [102], server [1], in acquireShardTicker(), lagging shards:[9], config: {5 [102 102 102 102 102 102 102 102 102 102] map[102:[server-102-0 server-102-1 server-102-2]]}, timestamp: map[0:5 1:5 2:5 3:5 4:5 5:5 6:5 7:5 8:5 9:0], kv store: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[]}].
+17:31:33.178929 gid [102], server [1], acquire shard with sid [9].
+17:31:33.194136 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [3], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[5:UFGcJr0MboRp9OwcLcmr]}.
+17:31:33.194136 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [4], local vs op timestamp: 5/5, local vs op kv store: {map[]}/{map[]}.
+17:31:33.194413 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [8], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]}.
+17:31:33.194413 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [1], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[3:P-C6ge0q97hcSXduhP90]}.
+17:31:33.194413 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [7], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[9:Sqi1wJM57UAYwfWRD3Ro]}.
+17:31:33.194413 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [2], local vs op timestamp: 5/5, local vs op kv store: {map[]}/{map[]}.
+17:31:33.209211 gid [100], server [1],received AcquireShards from gid [102], config num [4], shard index[9].
+17:31:33.209294 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [4], shard index[9].
+17:31:33.209348 gid [100], server [2],received AcquireShards from gid [102], config num [4], shard index[9].
+17:31:33.209348 gid [100], server [2], acquire shard OK, args config num [4], reply config num [5], shard timestamp [4], reply/og data: {map[1:hqCOOODdaWbmHuYNBQ3Z]} vs {map[1:hqCOOODdaWbmHuYNBQ3Z]}.
+17:31:33.209439 gid [102], server [1], acquireShards ok, sid [9], reply config num: 5, reply timestamp: 4, cur time stamp: 5.
+17:31:33.224231 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [9], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[1:hqCOOODdaWbmHuYNBQ3Z]}.
+17:31:33.255119 gid [100], server [1],received AcquireShards from gid [102], config num [4], shard index[9].
+17:31:33.255119 gid [100], server [1], WRONG LEADER, received AcquireShards from gid [102], config num [4], shard index[9].
+17:31:33.255119 gid [100], server [2],received AcquireShards from gid [102], config num [4], shard index[9].
+17:31:33.255119 gid [100], server [2], acquire shard OK, args config num [4], reply config num [5], shard timestamp [4], reply/og data: {map[1:hqCOOODdaWbmHuYNBQ3Z]} vs {map[1:hqCOOODdaWbmHuYNBQ3Z]}.
+17:31:33.255119 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [9], local vs op timestamp: 0/5, local vs op kv store: {map[]}/{map[1:hqCOOODdaWbmHuYNBQ3Z]}.
+17:31:33.255119 gid [102], server [1], acquireShards ok, sid [9], reply config num: 5, reply timestamp: 4, cur time stamp: 5.
+17:31:33.285948 client [3444764295159967059], RequestIndex [23], start put/append request, shard [9], to gid [102], key: 1, value: HMPU_UIO-L7CfKLAJekW
+17:31:33.285948 coordinator server [1], gid [102], request index [0], handle AcquireShard, shard id [9], local vs op timestamp: 5/5, local vs op kv store: {map[1:hqCOOODdaWbmHuYNBQ3Z]}/{map[1:hqCOOODdaWbmHuYNBQ3Z]}.
+17:31:33.286126 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [102], request to server &{QEpUQpoLQsHr_ukAFPyg 0xc00005c240 0xc00005c2a0}
+17:31:33.316679 coordinator server [2], gid [102], request index [0], handle AcquireShard, shard id [9], local vs op timestamp: 5/5, local vs op kv store: {map[1:hqCOOODdaWbmHuYNBQ3Z]}/{map[1:hqCOOODdaWbmHuYNBQ3Z]}.
+17:31:33.331950 client [3444764295159967059], RequestIndex [23], put/append, to shard [9], gid [102], request to server &{SrYGi-T6lFNJioVujdBQ 0xc00005c240 0xc00005c2a0}
+17:31:33.332058 gid [102], server [1], RequestIndex [23], APPEND, key: 1, value: HMPU_UIO-L7CfKLAJekW, ShardKVStore: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.332058 gid [102], server [1], RequestIndex [23], APPEND start raft, key: 1, value: HMPU_UIO-L7CfKLAJekW, ShardKVStore: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3Z]}].
+17:31:33.346714 coordinator server [1], gid [102], client id [3444764295159967059], request index [23], shard index [9], APPEND, key: 1, value: HMPU_UIO-L7CfKLAJekW, result after append: hqCOOODdaWbmHuYNBQ3ZHMPU_UIO-L7CfKLAJekW..
+17:31:33.346714 coordinator, gid [102], server [1], send
+17:31:33.347628 StartCh= kvserver: 1, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 23, kv.startChannels: map[3444764295159967059:map[23:{{1 0 3444764295159967059 23 APPEND true 1 HMPU_UIO-L7CfKLAJekW {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc000491f20}]].
+17:31:33.347628 StartCh= ShardKV: 1, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:33.347628 coordinator, gid [102], server [1], finish send
+17:31:33.347628 gid [102], server [1], RequestIndex [23], APPEND, return error type: OK, key: 1, value: HMPU_UIO-L7CfKLAJekW, ShardKVStore: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3ZHMPU_UIO-L7CfKLAJekW]}].
+17:31:33.347628 StartCh= kvserver: 1, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 23, kv.startChannels: map[3444764295159967059:map[]].
+17:31:33.347628 StartCh= ShardKV: 1, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:33.347628 client [3444764295159967059], RequestIndex [24], start put/append request, shard [0], to gid [102], key: 2
+17:31:33.347628 client [3444764295159967059], RequestIndex [24], put/append request, shard [0], to gid [102], to server: &{Nudo5nYRLOpxOO0kRpcI 0xc00005c240 0xc00005c2a0}
+17:31:33.377800 coordinator server [2], gid [102], client id [3444764295159967059], request index [23], shard index [9], APPEND, key: 1, value: HMPU_UIO-L7CfKLAJekW, result after append: hqCOOODdaWbmHuYNBQ3ZHMPU_UIO-L7CfKLAJekW..
+17:31:33.438786 client [3444764295159967059], RequestIndex [24], put/append request, shard [0], to gid [102], to server: &{ttU4Eo1IuPKrPrmKnRLL 0xc00005c240 0xc00005c2a0}
+17:31:33.438786 gid [102], server [1], RequestIndex [24], get, key: 2, ShardKVStore: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3ZHMPU_UIO-L7CfKLAJekW]}].
+17:31:33.439091 gid [102], server [1], get start raft, key: 2, ShardKVStore: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3ZHMPU_UIO-L7CfKLAJekW]}].
+17:31:33.470593 coordinator server [1], gid [102], client id [3444764295159967059], request index [24], shard index [0], get, key: 2, get result value: .
+17:31:33.470593 coordinator, gid [102], server [1], send
+17:31:33.470593 StartCh= kvserver: 1, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 24, kv.startChannels: map[3444764295159967059:map[24:{{1 0 3444764295159967059 24 GET true 2  {0 [0 0 0 0 0 0 0 0 0 0] map[]} 0 0 {map[]}} 0xc000568600}]].
+17:31:33.470593 StartCh= ShardKV: 1, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+17:31:33.470593 coordinator, gid [102], server [1], finish send
+17:31:33.470593 gid [102], server [1], RequestIndex [24], get, return error type: ErrNoKey, key: 2, ShardKVStore: map[0:{map[]} 1:{map[3:P-C6ge0q97hcSXduhP90]} 2:{map[]} 3:{map[5:UFGcJr0MboRp9OwcLcmr]} 4:{map[]} 5:{map[7:A3n7WnUOW0cZXJK0EsQm]} 6:{map[8:qRsvHJD3DMggkF3lVV_r]} 7:{map[9:Sqi1wJM57UAYwfWRD3Ro]} 8:{map[0:uPI_P357eumTC5en9hdWjEisOPOSmd35RGYl9IzW]} 9:{map[1:hqCOOODdaWbmHuYNBQ3ZHMPU_UIO-L7CfKLAJekW]}].
+17:31:33.470593 StartCh= kvserver: 1, try to delete start ch, before deletion, op.ClientId: 3444764295159967059, op.RequestIndex: 24, kv.startChannels: map[3444764295159967059:map[]].
+17:31:33.470593 StartCh= ShardKV: 1, after deletion, kv.startChannels: map[3444764295159967059:map[]].
+    test_test.go:19: Get(2): expected:
+        TbwXp__fYjjm16rroQV3
+        received:
+--- FAIL: TestMissChange (2.19s)
+
+FAIL
+
+
+Process finished with the exit code 1
+

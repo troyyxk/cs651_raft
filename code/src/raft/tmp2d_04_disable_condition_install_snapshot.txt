@@ -1,0 +1,1018 @@
+GOROOT=C:\Program Files\Go #gosetup
+GOPATH=C:\Users\xingk\go #gosetup
+"C:\Program Files\Go\bin\go.exe" test -c -o C:\Users\xingk\AppData\Local\Temp\GoLand\___TestSnapshotInstallUnreliable2D_in_6_824_raft.test.exe 6.824/raft #gosetup
+"C:\Program Files\Go\bin\go.exe" tool test2json -t C:\Users\xingk\AppData\Local\Temp\GoLand\___TestSnapshotInstallUnreliable2D_in_6_824_raft.test.exe -test.v -test.paniconexit0 -test.run ^\QTestSnapshotInstallUnreliable2D\E$ #gosetup
+=== RUN   TestSnapshotInstallUnreliable2D
+00:10:05.064982 --- node 0, term 0, status 0: Initialized index 0 raft node.
+00:10:05.065388 PPP= node 0, term 0, status 0: after read persist, self: rf.currentTerm: 0, rf.votedFor: -1, len(rf.logs): 1, rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, rf.logs: [{-1 -1}].
+00:10:05.065622 --- node 1, term 0, status 0: Initialized index 1 raft node.
+00:10:05.065622 PPP= node 1, term 0, status 0: after read persist, self: rf.currentTerm: 0, rf.votedFor: -1, len(rf.logs): 1, rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, rf.logs: [{-1 -1}].
+00:10:05.065622 --- node 2, term 0, status 0: Initialized index 2 raft node.
+00:10:05.065622 PPP= node 2, term 0, status 0: after read persist, self: rf.currentTerm: 0, rf.votedFor: -1, len(rf.logs): 1, rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, rf.logs: [{-1 -1}].
+Test (2D): install snapshots (disconnect+unreliable) ...
+00:10:05.307655 ---= node 0, term 0, status 0: start election.
+00:10:05.307655 ---= node 1, term 0, status 0: start election.
+00:10:05.307655 ---= node 0, term 1, status 1: become candidate and start gather vote.
+00:10:05.307655 EEE> node 0, term 1, status 1: request vote request to 1.
+00:10:05.307655 EEE> node 0, term 1, status 1: request vote request to 2.
+00:10:05.307655 ---= node 1, term 1, status 1: become candidate and start gather vote.
+00:10:05.307655 EEE> node 1, term 1, status 1: request vote request to 0.
+00:10:05.307655 EEE> node 1, term 1, status 1: request vote request to 2.
+00:10:05.308401 EEE< node 2, term 0, status 0: self voted for -1, receive request vote from 1, term 1.
+00:10:05.308401 EEE< node 2, term 0, status 0: args.Term: 1, args.LastLogIndex: 0, rf.getLastLogEntryTerm(): -1, rf.getLastLogEntryIndex(): 0, rf.getLogLengthWithoutSnapshot(): 1, rf.snapshotEntriesAmount: 0.
+00:10:05.308401 EEE< node 2, term 0, status 0: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.308401 EEE< node 2, term 0, status 0: self term lower, becomes follower of 1.
+00:10:05.308401 EEE< node 2, term 1, status 0: rf.getLastLogEntryTerm(): -1, args.LastLogTerm: -1, rf.getLastLogEntryIndex(): 0, args.LastLogIndex: 0.
+00:10:05.308401 EEE< node 2, term 1, status 0: vote granted, args.Term: 1, args.LastLogIndex: 0, rf.getLastLogEntryTerm(): -1, rf.getLastLogEntryIndex(): 0, rf.getLogLengthWithoutSnapshot(): 1, rf.getLastLogEntryIndex(): 0.
+00:10:05.308401 EEE< node 2, term 1, status 0: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.308401 EEE> node 1, term 1, status 1: from 2, term 1, voteGranted: true.
+00:10:05.308401 EEE> node 1, term 1, status 1: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.308401 EEE> node 1, term 1, status 1: vote gained from 2.
+00:10:05.308401 EEE= node 1, term 1, status 1: check election status, number of vote gained: 2, total number of peers: 3.
+00:10:05.308401 EEE= node 1, term 2, status 2: becomes leader.
+00:10:05.308401 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.308401 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.308401 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.308401 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1.
+00:10:05.308401 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1.
+00:10:05.322831 AAA< node 2, term 1, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1, len(args.Entries),: 0.
+00:10:05.322831 EEE< node 0, term 1, status 1: self voted for 0, receive request vote from 1, term 1.
+00:10:05.322831 AAA< node 2, term 2, status 0: successfully append entries, last log term: -1, last log index 0.
+00:10:05.322831 EEE< node 0, term 1, status 1: args.Term: 1, args.LastLogIndex: 0, rf.getLastLogEntryTerm(): -1, rf.getLastLogEntryIndex(): 0, rf.getLogLengthWithoutSnapshot(): 1, rf.snapshotEntriesAmount: 0.
+00:10:05.322831 EEE< node 0, term 1, status 1: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.322831 EEE< node 0, term 1, status 1: rf.getLastLogEntryTerm(): -1, args.LastLogTerm: -1, rf.getLastLogEntryIndex(): 0, args.LastLogIndex: 0.
+00:10:05.322831 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.322831 CCC= finish commit.
+00:10:05.322831 EEE< node 2, term 2, status 0: self voted for -1, receive request vote from 0, term 1.
+00:10:05.322831 EEE< node 2, term 2, status 0: args.Term: 1, args.LastLogIndex: 0, rf.getLastLogEntryTerm(): -1, rf.getLastLogEntryIndex(): 0, rf.getLogLengthWithoutSnapshot(): 1, rf.snapshotEntriesAmount: 0.
+00:10:05.322831 EEE< node 0, term 1, status 0: vote granted, args.Term: 1, args.LastLogIndex: 0, rf.getLastLogEntryTerm(): -1, rf.getLastLogEntryIndex(): 0, rf.getLogLengthWithoutSnapshot(): 1, rf.getLastLogEntryIndex(): 0.
+00:10:05.322831 EEE< node 0, term 1, status 0: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.322831 EEE< node 2, term 2, status 0: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.322831 EEE< node 2, term 2, status 0: self term larger, reject vote.
+00:10:05.322831 EEE> node 1, term 2, status 2: request vote to 0 connection not success, not ok.
+00:10:05.322831 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.322831 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.322831 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: -1, rf.getLogLengthWithoutSnapshot(): 1, rf.getLastLogEntryIndex(): 0.
+00:10:05.322831 CCC= node 1, term 2, status 2: rf.matchIndex: [-1 -1 0].
+00:10:05.322831 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: -1, len(rf.logs): 1.
+00:10:05.322831 EEE> node 0, term 1, status 0: from 2, term 1, voteGranted: false.
+00:10:05.322831 EEE> node 0, term 1, status 0: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.322831 EEE> node 0, term 1, status 0: higher term from 2, term 1, quit election and become follower.
+00:10:05.322831 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.322831 CCC= finish commit.
+00:10:05.338681 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.338681 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.338681 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.338681 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1, len(args.Entries),: 0.
+00:10:05.338681 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1.
+00:10:05.338681 AAA< node 0, term 2, status 0: successfully append entries, last log term: -1, last log index 0.
+00:10:05.338681 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1.
+00:10:05.338681 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.338681 CCC= finish commit.
+00:10:05.338681 EEE< node 1, term 2, status 2: self voted for -1, receive request vote from 0, term 1.
+00:10:05.338681 EEE< node 1, term 2, status 2: args.Term: 1, args.LastLogIndex: 0, rf.getLastLogEntryTerm(): -1, rf.getLastLogEntryIndex(): 0, rf.getLogLengthWithoutSnapshot(): 1, rf.snapshotEntriesAmount: 0.
+00:10:05.338681 EEE< node 1, term 2, status 2: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.338681 EEE< node 1, term 2, status 2: self term larger, reject vote.
+00:10:05.338681 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.338681 EEE> node 0, term 2, status 0: from 1, term 1, voteGranted: false.
+00:10:05.338681 EEE> node 0, term 2, status 0: rf.commitIndex: -1, rf.lastApplied: -1
+00:10:05.338681 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.338681 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: -1, rf.getLogLengthWithoutSnapshot(): 1, rf.getLastLogEntryIndex(): 0.
+00:10:05.338681 CCC= node 1, term 2, status 2: rf.matchIndex: [0 -1 0].
+00:10:05.338681 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: -1, len(rf.logs): 1.
+00:10:05.338872 EEE= node 0, term 2, status 0: check election status, number of vote gained: 0, total number of peers: 3.
+00:10:05.338872 EEE= node 0, term 2, status 0: not candidate, quit election.
+00:10:05.338872 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.338872 CCC= finish commit.
+00:10:05.368837 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.368837 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.368837 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.368837 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.368837 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.368837 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1, len(args.Entries),: 0.
+00:10:05.368837 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1, len(args.Entries),: 0.
+00:10:05.368837 AAA< node 0, term 2, status 0: successfully append entries, last log term: -1, last log index 0.
+00:10:05.368837 AAA< node 2, term 2, status 0: successfully append entries, last log term: -1, last log index 0.
+00:10:05.368837 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.368837 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.368837 CCC= finish commit.
+00:10:05.368837 CCC= finish commit.
+00:10:05.368837 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.368837 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.368837 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: -1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.368837 CCC= node 1, term 2, status 2: rf.matchIndex: [0 -1 0].
+00:10:05.368837 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: -1, len(rf.logs): 2.
+00:10:05.368837 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.368837 CCC= finish commit.
+00:10:05.368837 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.368837 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.368837 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: -1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.368837 CCC= node 1, term 2, status 2: rf.matchIndex: [0 -1 0].
+00:10:05.368837 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: -1, len(rf.logs): 2.
+00:10:05.368837 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.368837 CCC= finish commit.
+00:10:05.399156 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.399232 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.399232 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.399232 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.399232 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [1 1 1]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.399232 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1, len(args.Entries),: 1.
+00:10:05.399232 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 1, len(args.Entries),: 1.
+00:10:05.399232 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.399232 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.399232 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.399232 CCC= finish commit.
+00:10:05.399232 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.399232 CCC= finish commit.
+00:10:05.399232 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.399232 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.399232 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: -1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.399232 CCC= node 1, term 2, status 2: rf.matchIndex: [0 -1 1].
+00:10:05.399232 CCC= node 1, term 2, status 2: update newCommitIndex from -1 to 1, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.399232 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.399232 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: 1.
+00:10:05.399232 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: -1, applyMsg.CommandIndex: 0, rf.getLogEntryAtIndex(i).Term: -1.
+00:10:05.399232 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 73401084459367935, applyMsg.CommandIndex: 1, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:05.399232 CCC= node 1, term 2, status 2: apply succeed.
+00:10:05.399232 CCC= commit message: {false -1 0 false [] 0 0}.
+00:10:05.399232 msg: {false -1 0 false [] 0 0}
+00:10:05.399232 CCC= commit message: {true 73401084459367935 1 false [] 0 0}.
+00:10:05.399232 msg: {true 73401084459367935 1 false [] 0 0}
+00:10:05.399232 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.399232 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.399232 CCC= finish commit.
+00:10:05.399232 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.399232 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.399232 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.399232 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.399232 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.399232 CCC= finish commit.
+00:10:05.413998 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 1.
+00:10:05.413998 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.413998 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.413998 CCC= finish commit.
+00:10:05.414362 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.414362 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.414362 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.414362 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.414362 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.414362 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.414362 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.414362 CCC= finish commit.
+00:10:05.429655 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.429655 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.429655 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.429655 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.429655 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.429655 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.429655 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 0, args.PrevLogTerm: -1; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 1.
+00:10:05.429655 AAA< node 2, term 2, status 0: commit index change from -1 to 1.
+00:10:05.429655 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.429655 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: 1.
+00:10:05.429655 CCC= node 2, term 2, status 0: try to apply with applyMsg.Command: -1, applyMsg.CommandIndex: 0, rf.getLogEntryAtIndex(i).Term: -1.
+00:10:05.429655 CCC= node 2, term 2, status 0: try to apply with applyMsg.Command: 73401084459367935, applyMsg.CommandIndex: 1, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:05.429655 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.429655 CCC= node 2, term 2, status 0: apply succeed.
+00:10:05.429655 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: -1.
+00:10:05.429655 CCC= finish commit.
+00:10:05.429655 CCC= commit message: {false -1 0 false [] 0 0}.
+00:10:05.429655 msg: {false -1 0 false [] 0 0}
+00:10:05.429655 CCC= commit message: {true 73401084459367935 1 false [] 0 0}.
+00:10:05.429655 msg: {true 73401084459367935 1 false [] 0 0}
+00:10:05.429655 CCC= finish commit.
+00:10:05.429655 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.429655 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.429655 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.429655 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.429655 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.429655 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.429655 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.429655 CCC= finish commit.
+00:10:05.429655 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.429655 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.429655 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.429655 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.429655 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.429655 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.429655 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.429655 CCC= finish commit.
+00:10:05.460718 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.460718 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.460718 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.460718 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.460718 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.460897 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.460897 AAA< node 0, term 2, status 0: commit index change from -1 to 1.
+00:10:05.460897 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.460897 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: -1, rf.commitIndex: 1.
+00:10:05.460897 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: -1, applyMsg.CommandIndex: 0, rf.getLogEntryAtIndex(i).Term: -1.
+00:10:05.460897 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 73401084459367935, applyMsg.CommandIndex: 1, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:05.460897 CCC= node 0, term 2, status 0: apply succeed.
+00:10:05.460897 CCC= commit message: {false -1 0 false [] 0 0}.
+00:10:05.460897 msg: {false -1 0 false [] 0 0}
+00:10:05.460897 CCC= commit message: {true 73401084459367935 1 false [] 0 0}.
+00:10:05.460897 msg: {true 73401084459367935 1 false [] 0 0}
+00:10:05.460897 CCC= finish commit.
+00:10:05.460897 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.460897 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.460897 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.460897 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.460897 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.460897 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.460897 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.460897 CCC= finish commit.
+00:10:05.476823 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.476823 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.476823 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.476823 CCC= finish commit.
+00:10:05.476823 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.476823 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.476823 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.476823 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.476823 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.476823 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.476823 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.476823 CCC= finish commit.
+00:10:05.491928 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.491928 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.491928 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.491928 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.491928 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.492109 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.492109 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.492109 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.492109 CCC= finish commit.
+00:10:05.492176 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.492176 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.492176 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.492176 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.492176 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.492176 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.492176 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.492176 CCC= finish commit.
+00:10:05.507294 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.507294 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.507294 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.507294 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.507294 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.507294 CCC= finish commit.
+00:10:05.507294 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.507294 CCC= finish commit.
+00:10:05.507294 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.507294 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.507294 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.507294 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.507294 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.507294 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.507294 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.507294 CCC= finish commit.
+00:10:05.507294 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.507294 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.507294 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.507294 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.507294 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.507294 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.507294 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.507294 CCC= finish commit.
+00:10:05.523179 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.523179 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.523179 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.523179 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.523278 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.553372 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.553456 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.553456 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.553456 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.553456 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.553456 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.553456 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.553523 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.553523 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.553523 CCC= finish commit.
+00:10:05.553523 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.553523 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.553523 CCC= finish commit.
+00:10:05.553523 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.553523 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.553523 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.553523 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.553523 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.553523 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.553523 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.553523 CCC= finish commit.
+00:10:05.553523 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.553523 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.553523 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.553523 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.553523 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.553523 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.553523 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.553523 CCC= finish commit.
+00:10:05.568850 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.568850 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.568850 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.568850 CCC= finish commit.
+00:10:05.568850 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.568850 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.568850 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.568850 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.568850 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.568850 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.568850 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.568850 CCC= finish commit.
+00:10:05.583913 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.583913 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.583913 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.583913 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.584072 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.584072 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.584072 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.584072 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.584072 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.584072 CCC= finish commit.
+00:10:05.584072 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.584072 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.584072 CCC= finish commit.
+00:10:05.584072 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.584072 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.584072 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.584072 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.584072 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.584072 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.584072 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.584072 CCC= finish commit.
+00:10:05.584072 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.584072 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.584072 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.584072 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.584072 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.584072 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.584072 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.584072 CCC= finish commit.
+00:10:05.598995 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.598995 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.598995 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.598995 CCC= finish commit.
+00:10:05.599186 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.599186 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.599186 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.599186 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.599186 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.599186 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.599186 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.599186 CCC= finish commit.
+00:10:05.615365 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.615365 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.615365 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.615485 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.615485 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.630599 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:05.646021 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.646021 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.646021 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.646021 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.646151 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.646151 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.646151 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.646151 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.646151 CCC= finish commit.
+00:10:05.646151 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.646151 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.646151 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.646151 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.646151 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.646151 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.646151 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.646151 CCC= finish commit.
+00:10:05.661399 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:05.661399 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.661399 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.661399 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.661399 CCC= finish commit.
+00:10:05.661589 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.661589 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.661589 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.661589 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.661589 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.661589 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.661589 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.661589 CCC= finish commit.
+00:10:05.677450 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.677450 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.677450 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.677450 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.677599 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.693321 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.693321 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.693321 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.693321 CCC= finish commit.
+00:10:05.693556 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.693556 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.693556 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.693556 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.693556 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.693556 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.693556 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.693556 CCC= finish commit.
+00:10:05.708450 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.708450 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.708450 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.708450 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.708552 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.708552 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.708552 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.708552 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.708552 CCC= finish commit.
+00:10:05.708552 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.708552 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.708552 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.708552 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.708552 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.708552 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.708552 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.708552 CCC= finish commit.
+00:10:05.738583 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.738635 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.738635 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.738635 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.738635 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:05.738701 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.738701 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.738701 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.738701 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.738701 CCC= finish commit.
+00:10:05.738701 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.738701 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.738701 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.738701 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.738701 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.738701 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.738701 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.738701 CCC= finish commit.
+00:10:05.753904 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.753904 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.753904 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.754109 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.754109 CCC= finish commit.
+00:10:05.754109 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.754109 AAA> node 1, term 2, status 2: receive send append entries to 0 connection not success, not ok.
+00:10:05.754109 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.754109 CCC= finish commit.
+00:10:05.754109 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.754109 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.754109 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.754109 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.754109 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.754109 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.754109 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.754109 CCC= finish commit.
+00:10:05.769153 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.769153 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.769153 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.769153 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.769252 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.784471 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.784471 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.784471 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.784471 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.784471 CCC= finish commit.
+00:10:05.784620 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.784620 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.784620 CCC= finish commit.
+00:10:05.784620 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.784620 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.784620 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.784620 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.784620 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.784620 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.784620 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.784620 CCC= finish commit.
+00:10:05.784620 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.784620 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.784620 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.784620 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.784620 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.784620 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.784620 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.784620 CCC= finish commit.
+00:10:05.800384 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.800384 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.800384 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.800384 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.800623 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.815103 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.815281 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.815281 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.815281 CCC= finish commit.
+00:10:05.815281 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.815281 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.815281 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.815281 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.815281 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.815281 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.815281 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.815281 CCC= finish commit.
+00:10:05.830220 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.830220 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.830220 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.830220 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.830351 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.830351 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.830351 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.830351 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.830351 CCC= finish commit.
+00:10:05.830351 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.830351 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.830351 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.830351 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.830351 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.830351 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.830351 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.830351 CCC= finish commit.
+00:10:05.845596 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.845596 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.845596 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.845596 CCC= finish commit.
+00:10:05.845686 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.845686 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.845686 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.845686 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.845686 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.845686 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.845686 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.845686 CCC= finish commit.
+00:10:05.861348 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.861348 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.861348 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.861348 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.861471 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.861471 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.861471 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.861471 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.861471 CCC= finish commit.
+00:10:05.861471 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.861471 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.861471 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.861471 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.861471 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.861471 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.861471 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.861471 CCC= finish commit.
+00:10:05.876473 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.876649 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.876649 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.876649 CCC= finish commit.
+00:10:05.876704 AAA> node 1, term 2, status 2: receive send append entries to 0 connection not success, not ok.
+00:10:05.891664 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.891664 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.891664 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.891664 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.891728 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.891728 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.891728 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.891805 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.891805 CCC= finish commit.
+00:10:05.891805 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.891805 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.891805 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.891805 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.891805 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.891805 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.891805 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.891805 CCC= finish commit.
+00:10:05.922043 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.922043 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.922043 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.922043 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.922043 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.922043 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.922205 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.922205 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.922205 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.922205 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.922205 CCC= finish commit.
+00:10:05.922205 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.922205 CCC= finish commit.
+00:10:05.922205 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.922205 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.922205 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.922205 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.922205 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.922205 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.922205 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.922205 CCC= finish commit.
+00:10:05.922205 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.922205 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.922205 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.922205 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.922318 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.922318 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.922318 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.922318 CCC= finish commit.
+00:10:05.937508 AAA< node 2, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.937508 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.937508 AAA< node 2, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.937508 CCC= node 2, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.937508 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.937508 CCC= finish commit.
+00:10:05.937508 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.937508 CCC= finish commit.
+00:10:05.937683 AAA> node 1, term 2, status 2: receive send append entries to 2.
+00:10:05.937683 AAA> node 1, term 2, status 2: receive send append entries to 2, success.
+00:10:05.937683 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.937683 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.937683 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.937683 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.937683 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.937683 CCC= finish commit.
+00:10:05.937683 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.937683 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.937683 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:05.937683 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.937683 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.937683 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 2.
+00:10:05.937683 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.937683 CCC= finish commit.
+00:10:05.953237 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.953290 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.953290 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.953290 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2.
+00:10:05.953348 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:05.968642 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:05.968642 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 1.
+00:10:05.968642 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.968642 CCC= finish commit.
+00:10:05.968820 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:05.968820 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:05.968820 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 3, rf.getLastLogEntryIndex(): 2.
+00:10:05.968820 CCC= node 1, term 2, status 2: rf.matchIndex: [1 -1 1].
+00:10:05.968820 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:05.968820 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 1, len(rf.logs): 3.
+00:10:05.968820 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:05.968820 CCC= finish commit.
+00:10:05.983725 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:05.983725 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:05.983725 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:05.983725 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:05.983807 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:05.998847 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.014613 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.014613 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.014613 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.014613 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:06.014613 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [2 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:06.014613 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 1, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 1.
+00:10:06.014819 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 2.
+00:10:06.014819 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 1.
+00:10:06.014819 CCC= finish commit.
+00:10:06.014819 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:06.014819 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:06.014819 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 1, rf.getLogLengthWithoutSnapshot(): 3, rf.getLastLogEntryIndex(): 2.
+00:10:06.014819 CCC= node 1, term 2, status 2: rf.matchIndex: [2 -1 1].
+00:10:06.014819 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 1, count: 3, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.014819 CCC= node 1, term 2, status 2: update newCommitIndex from 1 to 2, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.014819 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 2, len(rf.logs): 3.
+00:10:06.014819 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 2.
+00:10:06.014819 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 6077717384514202223, applyMsg.CommandIndex: 2, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.014819 CCC= node 1, term 2, status 2: apply succeed.
+00:10:06.014819 CCC= commit message: {true 6077717384514202223 2 false [] 0 0}.
+00:10:06.014819 msg: {true 6077717384514202223 2 false [] 0 0}
+00:10:06.014819 CCC= finish commit.
+00:10:06.045646 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.045646 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.045646 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.045646 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:06.045646 AAA> node 1, term 2, status 2: receive send append entries to 0 connection not success, not ok.
+00:10:06.045791 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:06.060688 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.076026 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.076026 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.076026 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.076026 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:06.076145 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3.
+00:10:06.076145 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 2, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3, len(args.Entries),: 0.
+00:10:06.076145 AAA< node 0, term 2, status 0: commit index change from 1 to 2.
+00:10:06.076145 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 2.
+00:10:06.076145 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 1, rf.commitIndex: 2.
+00:10:06.076145 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 6077717384514202223, applyMsg.CommandIndex: 2, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.076145 CCC= node 0, term 2, status 0: apply succeed.
+00:10:06.076145 CCC= commit message: {true 6077717384514202223 2 false [] 0 0}.
+00:10:06.076145 msg: {true 6077717384514202223 2 false [] 0 0}
+00:10:06.076145 CCC= finish commit.
+00:10:06.076145 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:06.076145 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:06.076145 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 2, rf.getLogLengthWithoutSnapshot(): 3, rf.getLastLogEntryIndex(): 2.
+00:10:06.076145 CCC= node 1, term 2, status 2: rf.matchIndex: [2 -1 1].
+00:10:06.076145 CCC= node 1, term 2, status 2: update newCommitIndex from 2 to 2, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.076145 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 2, len(rf.logs): 3.
+00:10:06.076145 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 2.
+00:10:06.076145 CCC= finish commit.
+00:10:06.091320 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.091320 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 2, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3, len(args.Entries),: 0.
+00:10:06.091320 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 2.
+00:10:06.091320 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 2.
+00:10:06.091320 CCC= finish commit.
+00:10:06.091320 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:06.091320 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:06.091320 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 2, rf.getLogLengthWithoutSnapshot(): 3, rf.getLastLogEntryIndex(): 2.
+00:10:06.091320 CCC= node 1, term 2, status 2: rf.matchIndex: [2 -1 1].
+00:10:06.091320 CCC= node 1, term 2, status 2: update newCommitIndex from 2 to 2, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.091320 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 2, len(rf.logs): 3.
+00:10:06.091320 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 2.
+00:10:06.091320 CCC= finish commit.
+00:10:06.106595 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.106595 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.106668 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.106812 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 15.
+00:10:06.106812 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 15.
+00:10:06.121743 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 2, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 3, len(args.Entries),: 12.
+00:10:06.121743 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 14.
+00:10:06.121743 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 2.
+00:10:06.121743 CCC= finish commit.
+00:10:06.121971 AAA> node 1, term 2, status 2: receive send append entries to 0 connection not success, not ok.
+00:10:06.137045 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.137045 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.137045 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.137045 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.137045 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 15.
+00:10:06.137218 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [3 1 2]; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 15.
+00:10:06.152770 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.152828 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 2, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 15, len(args.Entries),: 12.
+00:10:06.152945 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 14.
+00:10:06.152945 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 2.
+00:10:06.152945 CCC= finish commit.
+00:10:06.152945 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:06.152945 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:06.152945 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 2, rf.getLogLengthWithoutSnapshot(): 15, rf.getLastLogEntryIndex(): 14.
+00:10:06.152945 CCC= node 1, term 2, status 2: rf.matchIndex: [14 -1 1].
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 2 to 2, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 2 to 3, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 3 to 4, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 4 to 5, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 5 to 6, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 6 to 7, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 7 to 8, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 8 to 9, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 9 to 10, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 10 to 11, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 11 to 12, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 12 to 13, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: update newCommitIndex from 13 to 14, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 14, len(rf.logs): 15.
+00:10:06.152945 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 14.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 7324471807765614736, applyMsg.CommandIndex: 3, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 2362060604949094357, applyMsg.CommandIndex: 4, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 2116042489175068777, applyMsg.CommandIndex: 5, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 7246903083985707985, applyMsg.CommandIndex: 6, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 737716643555927675, applyMsg.CommandIndex: 7, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 1649694838976055790, applyMsg.CommandIndex: 8, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 6111841219325111039, applyMsg.CommandIndex: 9, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 7948697414241808643, applyMsg.CommandIndex: 10, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 340906205119389135, applyMsg.CommandIndex: 11, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 5647674952863305253, applyMsg.CommandIndex: 12, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 3994168257715527816, applyMsg.CommandIndex: 13, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: try to apply with applyMsg.Command: 5863695701762296264, applyMsg.CommandIndex: 14, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.152945 CCC= node 1, term 2, status 2: apply succeed.
+00:10:06.152945 CCC= commit message: {true 7324471807765614736 3 false [] 0 0}.
+00:10:06.152945 msg: {true 7324471807765614736 3 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 2362060604949094357 4 false [] 0 0}.
+00:10:06.152945 msg: {true 2362060604949094357 4 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 2116042489175068777 5 false [] 0 0}.
+00:10:06.152945 msg: {true 2116042489175068777 5 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 7246903083985707985 6 false [] 0 0}.
+00:10:06.152945 msg: {true 7246903083985707985 6 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 737716643555927675 7 false [] 0 0}.
+00:10:06.152945 msg: {true 737716643555927675 7 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 1649694838976055790 8 false [] 0 0}.
+00:10:06.152945 msg: {true 1649694838976055790 8 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 6111841219325111039 9 false [] 0 0}.
+00:10:06.152945 msg: {true 6111841219325111039 9 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 7948697414241808643 10 false [] 0 0}.
+00:10:06.152945 msg: {true 7948697414241808643 10 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 340906205119389135 11 false [] 0 0}.
+00:10:06.152945 msg: {true 340906205119389135 11 false [] 0 0}
+00:10:06.152945 SSS> node 1, term 2, status 2: order from state machine to install snapshot at index: 10, len(rf.logs): 15, rf.snapshotEntriesAmount: 0, rf.logs: [{-1 -1} {2 73401084459367935} {2 6077717384514202223} {2 7324471807765614736} {2 2362060604949094357} {2 2116042489175068777} {2 7246903083985707985} {2 737716643555927675} {2 1649694838976055790} {2 6111841219325111039} {2 7948697414241808643} {2 340906205119389135} {2 5647674952863305253} {2 3994168257715527816} {2 5863695701762296264}].
+00:10:06.152945 SSS> node 1, term 2, status 2: order from state machine to install snapshot success, index: 10, rf.snapshotEntriesAmount: 0, rf.commitIndex: 14.
+00:10:06.152945 SSS> node 1, term 2, status 2: finish Snapshot() with rf.commitIndex: 14,  len(rf.logs): 4, rf.snapshotEntriesAmount: 11, rf.logs: [{2 340906205119389135} {2 5647674952863305253} {2 3994168257715527816} {2 5863695701762296264}].
+00:10:06.152945 CCC= commit message: {true 5647674952863305253 12 false [] 0 0}.
+00:10:06.152945 msg: {true 5647674952863305253 12 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 3994168257715527816 13 false [] 0 0}.
+00:10:06.152945 msg: {true 3994168257715527816 13 false [] 0 0}
+00:10:06.152945 CCC= commit message: {true 5863695701762296264 14 false [] 0 0}.
+00:10:06.152945 msg: {true 5863695701762296264 14 false [] 0 0}
+00:10:06.152945 CCC= finish commit.
+00:10:06.168123 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.168123 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.168123 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.168123 SSS> node 1, term 2, status 2: send install snapshot to 2, rf.nextIndex: [15 1 11].
+00:10:06.168123 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [15 1 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4.
+00:10:06.182908 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.198542 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.198542 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.198542 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.198542 AAA> node 1, term 2, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.198542 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [15 1 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4.
+00:10:06.198669 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [15 1 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4.
+00:10:06.198669 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 14, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 15, len(args.Entries),: 0.
+00:10:06.198669 AAA< node 0, term 2, status 0: commit index change from 2 to 14.
+00:10:06.198669 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 14.
+00:10:06.198669 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 2, rf.commitIndex: 14.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 7324471807765614736, applyMsg.CommandIndex: 3, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 2362060604949094357, applyMsg.CommandIndex: 4, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 2116042489175068777, applyMsg.CommandIndex: 5, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 7246903083985707985, applyMsg.CommandIndex: 6, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 737716643555927675, applyMsg.CommandIndex: 7, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 1649694838976055790, applyMsg.CommandIndex: 8, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 6111841219325111039, applyMsg.CommandIndex: 9, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 7948697414241808643, applyMsg.CommandIndex: 10, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 340906205119389135, applyMsg.CommandIndex: 11, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 5647674952863305253, applyMsg.CommandIndex: 12, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 3994168257715527816, applyMsg.CommandIndex: 13, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: try to apply with applyMsg.Command: 5863695701762296264, applyMsg.CommandIndex: 14, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.198669 CCC= node 0, term 2, status 0: apply succeed.
+00:10:06.198669 CCC= commit message: {true 7324471807765614736 3 false [] 0 0}.
+00:10:06.198669 msg: {true 7324471807765614736 3 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 2362060604949094357 4 false [] 0 0}.
+00:10:06.198669 msg: {true 2362060604949094357 4 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 2116042489175068777 5 false [] 0 0}.
+00:10:06.198669 msg: {true 2116042489175068777 5 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 7246903083985707985 6 false [] 0 0}.
+00:10:06.198669 msg: {true 7246903083985707985 6 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 737716643555927675 7 false [] 0 0}.
+00:10:06.198669 msg: {true 737716643555927675 7 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 1649694838976055790 8 false [] 0 0}.
+00:10:06.198669 msg: {true 1649694838976055790 8 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 6111841219325111039 9 false [] 0 0}.
+00:10:06.198669 msg: {true 6111841219325111039 9 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 7948697414241808643 10 false [] 0 0}.
+00:10:06.198669 msg: {true 7948697414241808643 10 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 340906205119389135 11 false [] 0 0}.
+00:10:06.198669 msg: {true 340906205119389135 11 false [] 0 0}
+00:10:06.198669 SSS> node 0, term 2, status 0: order from state machine to install snapshot at index: 10, len(rf.logs): 15, rf.snapshotEntriesAmount: 0, rf.logs: [{-1 -1} {2 73401084459367935} {2 6077717384514202223} {2 7324471807765614736} {2 2362060604949094357} {2 2116042489175068777} {2 7246903083985707985} {2 737716643555927675} {2 1649694838976055790} {2 6111841219325111039} {2 7948697414241808643} {2 340906205119389135} {2 5647674952863305253} {2 3994168257715527816} {2 5863695701762296264}].
+00:10:06.198669 SSS> node 0, term 2, status 0: order from state machine to install snapshot success, index: 10, rf.snapshotEntriesAmount: 0, rf.commitIndex: 14.
+00:10:06.198669 SSS> node 0, term 2, status 0: finish Snapshot() with rf.commitIndex: 14,  len(rf.logs): 4, rf.snapshotEntriesAmount: 11, rf.logs: [{2 340906205119389135} {2 5647674952863305253} {2 3994168257715527816} {2 5863695701762296264}].
+00:10:06.198669 CCC= commit message: {true 5647674952863305253 12 false [] 0 0}.
+00:10:06.198669 msg: {true 5647674952863305253 12 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 3994168257715527816 13 false [] 0 0}.
+00:10:06.198669 msg: {true 3994168257715527816 13 false [] 0 0}
+00:10:06.198669 CCC= commit message: {true 5863695701762296264 14 false [] 0 0}.
+00:10:06.198669 msg: {true 5863695701762296264 14 false [] 0 0}
+00:10:06.198669 CCC= finish commit.
+00:10:06.198669 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:06.198669 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:06.198669 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 14, rf.getLogLengthWithoutSnapshot(): 4, rf.getLastLogEntryIndex(): 14.
+00:10:06.198669 CCC= node 1, term 2, status 2: rf.matchIndex: [14 -1 1].
+00:10:06.198669 CCC= node 1, term 2, status 2: update newCommitIndex from 14 to 14, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.198669 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 14, len(rf.logs): 4.
+00:10:06.198669 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 14, rf.commitIndex: 14.
+00:10:06.198669 CCC= finish commit.
+00:10:06.229031 AAA> node 1, term 2, status 2: start sending out heart beat.
+00:10:06.229031 ---= node 2, term 2, status 0: start election.
+00:10:06.229031 AAA> node 1, term 2, status 2: append entries send to 0.
+00:10:06.229031 AAA> node 1, term 2, status 2: append entries send to 2.
+00:10:06.229153 ---= node 2, term 3, status 1: become candidate and start gather vote.
+00:10:06.229153 EEE> node 2, term 3, status 1: request vote request to 0.
+00:10:06.229153 EEE> node 2, term 3, status 1: request vote request to 1.
+00:10:06.229153 AAA> node 1, term 2, status 2: start send append entries to 0, rf.nextIndex: [15 1 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.229153 AAA< node 0, term 2, status 0: append entries from node 1, term 2, args.PrevLogIndex: 14, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4, len(args.Entries),: 0.
+00:10:06.229153 AAA> node 1, term 2, status 2: start send append entries to 2, rf.nextIndex: [15 1 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.229153 AAA< node 0, term 2, status 0: successfully append entries, last log term: 2, last log index 14.
+00:10:06.229153 CCC= node 0, term 2, status 0: try commit to apply channel with rf.lastApplied: 14, rf.commitIndex: 14.
+00:10:06.229153 CCC= finish commit.
+00:10:06.229153 AAA> node 1, term 2, status 2: receive send append entries to 0.
+00:10:06.229153 AAA> node 1, term 2, status 2: receive send append entries to 0, success.
+00:10:06.229153 CCC= node 1, term 2, status 2: try update leader commit with rf.commitIndex: 14, rf.getLogLengthWithoutSnapshot(): 5, rf.getLastLogEntryIndex(): 15.
+00:10:06.229153 CCC= node 1, term 2, status 2: rf.matchIndex: [14 -1 1].
+00:10:06.229153 CCC= node 1, term 2, status 2: update newCommitIndex from 14 to 14, count: 2, len(rf.peers)/2: 1, rf.getLogEntryAtIndex(i).Term: 2, rf.currentTerm: 2.
+00:10:06.229153 CCC= node 1, term 2, status 2: finish update leader commit with rf.commitIndex: 14, len(rf.logs): 5.
+00:10:06.229153 CCC= node 1, term 2, status 2: try commit to apply channel with rf.lastApplied: 14, rf.commitIndex: 14.
+00:10:06.229153 CCC= finish commit.
+00:10:06.244221 AAA> node 1, term 2, status 2: receive send append entries to 0 connection not success, not ok.
+00:10:06.244221 EEE< node 1, term 2, status 2: self voted for -1, receive request vote from 2, term 3.
+00:10:06.244221 EEE< node 1, term 2, status 2: args.Term: 3, args.LastLogIndex: 1, rf.getLastLogEntryTerm(): 2, rf.getLastLogEntryIndex(): 15, rf.getLogLengthWithoutSnapshot(): 5, rf.snapshotEntriesAmount: 11.
+00:10:06.244221 EEE< node 1, term 2, status 2: rf.commitIndex: 14, rf.lastApplied: 14
+00:10:06.244221 EEE< node 1, term 2, status 2: self term lower, becomes follower of 2.
+00:10:06.244221 AAA< node 2, term 3, status 1: append entries from node 1, term 2, args.PrevLogIndex: 10, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 5.
+00:10:06.244221 AAA< node 2, term 3, status 1: term smaller, refused.
+00:10:06.244221 EEE< node 1, term 3, status 0: rf.getLastLogEntryTerm(): 2, args.LastLogTerm: 2, rf.getLastLogEntryIndex(): 15, args.LastLogIndex: 1.
+00:10:06.244221 EEE< node 1, term 3, status 0: self log more up to date, reject vote.
+00:10:06.244221 EEE> node 2, term 3, status 1: from 1, term 3, voteGranted: false.
+00:10:06.244221 EEE> node 2, term 3, status 1: rf.commitIndex: 1, rf.lastApplied: 1
+00:10:06.244221 EEE= node 2, term 3, status 1: check election status, number of vote gained: 1, total number of peers: 3.
+00:10:06.244221 AAA> node 1, term 3, status 0: receive send append entries to 2.
+00:10:06.244221 AAA> node 1, term 3, status 0: receive send append entries to 2, no longer leader, stop sending append entries.
+00:10:06.259212 SSS> node 1, term 3, status 0: send snap shot to 2 connection not success, not ok.
+00:10:06.259212 EEE< node 0, term 2, status 0: self voted for -1, receive request vote from 2, term 3.
+00:10:06.259212 EEE< node 0, term 2, status 0: args.Term: 3, args.LastLogIndex: 1, rf.getLastLogEntryTerm(): 2, rf.getLastLogEntryIndex(): 14, rf.getLogLengthWithoutSnapshot(): 4, rf.snapshotEntriesAmount: 11.
+00:10:06.259212 EEE< node 0, term 2, status 0: rf.commitIndex: 14, rf.lastApplied: 14
+00:10:06.259212 EEE< node 0, term 2, status 0: self term lower, becomes follower of 2.
+00:10:06.259212 EEE< node 0, term 3, status 0: rf.getLastLogEntryTerm(): 2, args.LastLogTerm: 2, rf.getLastLogEntryIndex(): 14, args.LastLogIndex: 1.
+00:10:06.259212 EEE< node 0, term 3, status 0: self log more up to date, reject vote.
+00:10:06.259212 EEE> node 2, term 3, status 1: from 0, term 3, voteGranted: false.
+00:10:06.259212 EEE> node 2, term 3, status 1: rf.commitIndex: 1, rf.lastApplied: 1
+00:10:06.259212 EEE= node 2, term 3, status 1: check election status, number of vote gained: 1, total number of peers: 3.
+00:10:06.274395 AAA> node 1, term 3, status 0: receive send append entries to 2 connection not success, not ok.
+00:10:06.413036 ---= node 1, term 3, status 0: start election.
+00:10:06.413036 ---= node 1, term 4, status 1: become candidate and start gather vote.
+00:10:06.413036 EEE> node 1, term 4, status 1: request vote request to 0.
+00:10:06.413036 EEE> node 1, term 4, status 1: request vote request to 2.
+00:10:06.428830 EEE< node 0, term 3, status 0: self voted for 2, receive request vote from 1, term 4.
+00:10:06.428830 EEE< node 0, term 3, status 0: args.Term: 4, args.LastLogIndex: 15, rf.getLastLogEntryTerm(): 2, rf.getLastLogEntryIndex(): 14, rf.getLogLengthWithoutSnapshot(): 4, rf.snapshotEntriesAmount: 11.
+00:10:06.428830 EEE< node 0, term 3, status 0: rf.commitIndex: 14, rf.lastApplied: 14
+00:10:06.428830 EEE< node 0, term 3, status 0: self term lower, becomes follower of 1.
+00:10:06.428830 EEE< node 2, term 3, status 1: self voted for 2, receive request vote from 1, term 4.
+00:10:06.428830 EEE< node 2, term 3, status 1: args.Term: 4, args.LastLogIndex: 15, rf.getLastLogEntryTerm(): 2, rf.getLastLogEntryIndex(): 1, rf.getLogLengthWithoutSnapshot(): 2, rf.snapshotEntriesAmount: 0.
+00:10:06.428830 EEE< node 2, term 3, status 1: rf.commitIndex: 1, rf.lastApplied: 1
+00:10:06.428830 EEE< node 2, term 3, status 1: self term lower, becomes follower of 1.
+00:10:06.428830 EEE< node 0, term 4, status 0: rf.getLastLogEntryTerm(): 2, args.LastLogTerm: 2, rf.getLastLogEntryIndex(): 14, args.LastLogIndex: 15.
+00:10:06.428830 EEE< node 0, term 4, status 0: vote granted, args.Term: 4, args.LastLogIndex: 15, rf.getLastLogEntryTerm(): 2, rf.getLastLogEntryIndex(): 14, rf.getLogLengthWithoutSnapshot(): 4, rf.getLastLogEntryIndex(): 14.
+00:10:06.428830 EEE< node 2, term 4, status 0: rf.getLastLogEntryTerm(): 2, args.LastLogTerm: 2, rf.getLastLogEntryIndex(): 1, args.LastLogIndex: 15.
+00:10:06.428830 EEE< node 0, term 4, status 0: rf.commitIndex: 14, rf.lastApplied: 14
+00:10:06.428830 EEE< node 2, term 4, status 0: vote granted, args.Term: 4, args.LastLogIndex: 15, rf.getLastLogEntryTerm(): 2, rf.getLastLogEntryIndex(): 1, rf.getLogLengthWithoutSnapshot(): 2, rf.getLastLogEntryIndex(): 1.
+00:10:06.428830 EEE< node 2, term 4, status 0: rf.commitIndex: 1, rf.lastApplied: 1
+00:10:06.428830 EEE> node 1, term 4, status 1: from 0, term 4, voteGranted: true.
+00:10:06.428830 EEE> node 1, term 4, status 1: rf.commitIndex: 14, rf.lastApplied: 14
+00:10:06.428830 EEE> node 1, term 4, status 1: vote gained from 0.
+00:10:06.428830 EEE= node 1, term 4, status 1: check election status, number of vote gained: 2, total number of peers: 3.
+00:10:06.428830 EEE= node 1, term 5, status 2: becomes leader.
+00:10:06.428830 AAA> node 1, term 5, status 2: start sending out heart beat.
+00:10:06.428830 AAA> node 1, term 5, status 2: append entries send to 0.
+00:10:06.429149 AAA> node 1, term 5, status 2: append entries send to 2.
+00:10:06.429149 AAA> node 1, term 5, status 2: start send append entries to 0, rf.nextIndex: [16 16 16]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.429149 EEE> node 1, term 5, status 2: from 2, term 4, voteGranted: true.
+00:10:06.429149 EEE> node 1, term 5, status 2: rf.commitIndex: 14, rf.lastApplied: 14
+00:10:06.429149 EEE> node 1, term 5, status 2: vote gained from 2 but term is different voteRequestReply.Term: 4, rf.currentTerm: 5.
+00:10:06.429149 EEE= node 1, term 5, status 2: check election status, number of vote gained: 0, total number of peers: 3.
+00:10:06.429149 EEE= node 1, term 5, status 2: not candidate, quit election.
+00:10:06.429149 AAA> node 1, term 5, status 2: start send append entries to 2, rf.nextIndex: [16 16 16]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.444155 AAA> node 1, term 5, status 2: start sending out heart beat.
+00:10:06.444155 AAA> node 1, term 5, status 2: append entries send to 0.
+00:10:06.444155 AAA> node 1, term 5, status 2: append entries send to 2.
+00:10:06.444155 AAA> node 1, term 5, status 2: start send append entries to 0, rf.nextIndex: [16 16 16]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.444255 AAA> node 1, term 5, status 2: start send append entries to 2, rf.nextIndex: [16 16 16]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.459718 AAA< node 2, term 4, status 0: append entries from node 1, term 5, args.PrevLogIndex: 15, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:06.459718 AAA< node 0, term 4, status 0: append entries from node 1, term 5, args.PrevLogIndex: 15, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4, len(args.Entries),: 0.
+00:10:06.459718 AAA< node 2, term 5, status 0: prev log index: 15, out of range of rf.getLastLogEntryIndex(): 1.
+00:10:06.459718 AAA< node 0, term 5, status 0: prev log index: 15, out of range of rf.getLastLogEntryIndex(): 14.
+00:10:06.459718 AAA> node 1, term 5, status 2: receive send append entries to 2 connection not success, not ok.
+00:10:06.459875 AAA> node 1, term 5, status 2: receive send append entries to 0.
+00:10:06.459875 AAA> node 1, term 5, status 2: receive send append entries to 0, not success, args.PrevLogIndex: 15, args.PrevLogTerm: 2, rf.nextIndex[server]: 16, rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2.
+00:10:06.474841 AAA> node 1, term 5, status 2: start sending out heart beat.
+00:10:06.474841 AAA> node 1, term 5, status 2: append entries send to 0.
+00:10:06.474841 AAA> node 1, term 5, status 2: append entries send to 2.
+00:10:06.474841 AAA> node 1, term 5, status 2: start send append entries to 2, rf.nextIndex: [12 16 16]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.474961 AAA> node 1, term 5, status 2: start send append entries to 0, rf.nextIndex: [12 16 16]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.474961 AAA< node 2, term 5, status 0: append entries from node 1, term 5, args.PrevLogIndex: 15, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:06.474961 AAA< node 0, term 5, status 0: append entries from node 1, term 5, args.PrevLogIndex: 15, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4, len(args.Entries),: 0.
+00:10:06.474961 AAA< node 0, term 5, status 0: prev log index: 15, out of range of rf.getLastLogEntryIndex(): 14.
+00:10:06.474961 AAA< node 2, term 5, status 0: prev log index: 15, out of range of rf.getLastLogEntryIndex(): 1.
+00:10:06.474961 AAA> node 1, term 5, status 2: receive send append entries to 0.
+00:10:06.474961 AAA> node 1, term 5, status 2: receive send append entries to 0, not success, args.PrevLogIndex: 15, args.PrevLogTerm: 2, rf.nextIndex[server]: 12, rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2.
+00:10:06.474961 AAA> node 1, term 5, status 2: receive send append entries to 2.
+00:10:06.474961 AAA> node 1, term 5, status 2: receive send append entries to 2, not success, args.PrevLogIndex: 15, args.PrevLogTerm: 2, rf.nextIndex[server]: 16, rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2.
+00:10:06.474961 SSS> node 1, term 5, status 2: send install snapshot to 0, rf.nextIndex: [11 16 12].
+00:10:06.490121 AAA< node 2, term 5, status 0: append entries from node 1, term 5, args.PrevLogIndex: 15, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 0, rf.lastSnapshotTerm: -1, len(rf.logs): 2, len(args.Entries),: 0.
+00:10:06.490121 AAA< node 0, term 5, status 0: append entries from node 1, term 5, args.PrevLogIndex: 11, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 4, len(args.Entries),: 4.
+00:10:06.490121 AAA< node 0, term 5, status 0: successfully append entries, last log term: 2, last log index 15.
+00:10:06.490121 AAA< node 2, term 5, status 0: prev log index: 15, out of range of rf.getLastLogEntryIndex(): 1.
+00:10:06.490121 CCC= node 0, term 5, status 0: try commit to apply channel with rf.lastApplied: 14, rf.commitIndex: 14.
+00:10:06.490121 CCC= finish commit.
+00:10:06.490357 AAA> node 1, term 5, status 2: receive send append entries to 0.
+00:10:06.490357 AAA> node 1, term 5, status 2: receive send append entries to 0, success.
+00:10:06.490357 CCC= node 1, term 5, status 2: try update leader commit with rf.commitIndex: 14, rf.getLogLengthWithoutSnapshot(): 5, rf.getLastLogEntryIndex(): 15.
+00:10:06.490357 CCC= node 1, term 5, status 2: rf.matchIndex: [15 -1 -1].
+00:10:06.490357 CCC= node 1, term 5, status 2: finish update leader commit with rf.commitIndex: 14, len(rf.logs): 5.
+00:10:06.490357 CCC= node 1, term 5, status 2: try commit to apply channel with rf.lastApplied: 14, rf.commitIndex: 14.
+00:10:06.490357 CCC= finish commit.
+00:10:06.490357 AAA> node 1, term 5, status 2: receive send append entries to 2.
+00:10:06.490357 AAA> node 1, term 5, status 2: receive send append entries to 2, not success, args.PrevLogIndex: 15, args.PrevLogTerm: 2, rf.nextIndex[server]: 12, rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2.
+00:10:06.490357 SSS> node 1, term 5, status 2: send install snapshot to 2, rf.nextIndex: [16 16 11].
+00:10:06.505744 AAA> node 1, term 5, status 2: start sending out heart beat.
+00:10:06.505850 AAA> node 1, term 5, status 2: append entries send to 0.
+00:10:06.505850 AAA> node 1, term 5, status 2: append entries send to 2.
+00:10:06.505850 AAA> node 1, term 5, status 2: start send append entries to 2, rf.nextIndex: [16 16 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.505850 SSS< node 0, term 5, status 0: install snapshot from node 1, term 5.
+00:10:06.505916 AAA> node 1, term 5, status 2: start send append entries to 0, rf.nextIndex: [16 16 11]; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 5.
+00:10:06.505916 SSS< node 0, term 5, status 0: args.LastIncludedIndex already included, return, rf.snapshotEntriesAmount: 11, args.LastIncludedIndex: 10.
+00:10:06.520811 SSS< node 2, term 5, status 0: install snapshot from node 1, term 5.
+00:10:06.520990 InstallSnapshot< applyMsg: {false <nil> 0 true [11 4 0 248 220 158 228 94 85 229 226 6] 2 10}
+00:10:06.520990 AAA< node 2, term 5, status 0: append entries from node 1, term 5, args.PrevLogIndex: 10, args.PrevLogTerm: 2; self: rf.snapshotEntriesAmount: 11, rf.lastSnapshotTerm: 2, len(rf.logs): 0, len(args.Entries),: 5.
+00:10:06.520990 AAA< node 2, term 5, status 0: commit index change from 10 to 14.
+00:10:06.520990 AAA< node 2, term 5, status 0: successfully append entries, last log term: 2, last log index 15.
+00:10:06.520990 CCC= node 2, term 5, status 0: try commit to apply channel with rf.lastApplied: 10, rf.commitIndex: 14.
+00:10:06.520990 CCC= node 2, term 5, status 0: try to apply with applyMsg.Command: 340906205119389135, applyMsg.CommandIndex: 11, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.520990 CCC= node 2, term 5, status 0: try to apply with applyMsg.Command: 5647674952863305253, applyMsg.CommandIndex: 12, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.520990 CCC= node 2, term 5, status 0: try to apply with applyMsg.Command: 3994168257715527816, applyMsg.CommandIndex: 13, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.520990 CCC= node 2, term 5, status 0: try to apply with applyMsg.Command: 5863695701762296264, applyMsg.CommandIndex: 14, rf.getLogEntryAtIndex(i).Term: 2.
+00:10:06.520990 CCC= node 2, term 5, status 0: apply succeed.
+00:10:06.520990 CCC= commit message: {true 340906205119389135 11 false [] 0 0}.
+00:10:06.520990 msg: {true 340906205119389135 11 false [] 0 0}
+00:10:06.520990 SSS> node 2, term 5, status 0: conditional install snapshot from state machine, lastIncludedTerm: 2, lastIncludedIndex: 10.
+00:10:06.520990 SSS> node 2, term 5, status 0: conditional install snapshot not success, rf.snapshotEntriesAmount: 11, lastIncludedIndex: 10.
+00:10:06.520990 server 2 applied index 11 but expected 2
+00:10:06.520990 CCC= commit message: {true 5647674952863305253 12 false [] 0 0}.
+00:10:06.520990 msg: {true 5647674952863305253 12 false [] 0 0}
+
+
+Process finished with the exit code 1
+

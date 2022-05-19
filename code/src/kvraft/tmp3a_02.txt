@@ -1,0 +1,2540 @@
+Test: one client (3A) ...
+  ... Passed --  15.1  5  6104  591
+Test: ops complete fast enough (3A) ...
+  ... Passed --  25.5  3  6155    0
+Test: many clients (3A) ...
+  ... Passed --  15.4  5 16110 2965
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  15.8  5  5409 1195
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.9  3   166   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    89    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   356    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5   171    3
+Test: partitions, one client (3A) ...
+  ... Passed --  22.5  5  8483  570
+Test: partitions, many clients (3A) ...
+  ... Passed --  22.8  5 60883 2544
+Test: restarts, one client (3A) ...
+  ... Passed --  18.7  5 14436  584
+Test: restarts, many clients (3A) ...
+  ... Passed --  19.0  5 46585 2964
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  20.0  5  5931 1219
+Test: restarts, partitions, many clients (3A) ...
+  ... Passed --  26.4  5 45669 2686
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+  ... Passed --  27.4  5  6550  850
+Test: unreliable net, restarts, partitions, random keys, many clients (3A) ...
+  ... Passed --  30.4  7 15657 2203
+PASS
+ok  	6.824/kvraft	262.581s
+Test: one client (3A) ...
+  ... Passed --  15.1  5  5132  593
+Test: ops complete fast enough (3A) ...
+  ... Passed --  25.4  3  5463    0
+Test: many clients (3A) ...
+  ... Passed --  15.5  5 17849 2963
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.5  5  5362 1284
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.9  3   165   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    74    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   356    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5   170    3
+Test: partitions, one client (3A) ...
+  ... Passed --  22.7  5  7259  526
+Test: partitions, many clients (3A) ...
+  ... Passed --  22.5  5 27577 2447
+Test: restarts, one client (3A) ...
+  ... Passed --  18.7  5 13776  590
+Test: restarts, many clients (3A) ...
+  ... Passed --  19.0  5 46278 2963
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  19.9  5  6103 1224
+Test: restarts, partitions, many clients (3A) ...
+  ... Passed --  26.1  5 58021 2664
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+panic: test timed out after 10m0s
+
+goroutine 611905 [running]:
+testing.(*M).startAlarm.func1()
+	/usr/lib/go-1.13/src/testing/testing.go:1377 +0xdf
+created by time.goFunc
+	/usr/lib/go-1.13/src/time/sleep.go:168 +0x44
+
+goroutine 1 [chan receive, 6 minutes]:
+testing.(*T).Run(0xc0000e0100, 0x622305, 0x20, 0x62ef00, 0x47f401)
+	/usr/lib/go-1.13/src/testing/testing.go:961 +0x377
+testing.runTests.func1(0xc0000e0000)
+	/usr/lib/go-1.13/src/testing/testing.go:1202 +0x78
+testing.tRunner(0xc0000e0000, 0xc000061dc0)
+	/usr/lib/go-1.13/src/testing/testing.go:909 +0xc9
+testing.runTests(0xc00000c7e0, 0x7a6fc0, 0x17, 0x17, 0x0)
+	/usr/lib/go-1.13/src/testing/testing.go:1200 +0x2a7
+testing.(*M).Run(0xc000020080, 0x0)
+	/usr/lib/go-1.13/src/testing/testing.go:1117 +0x176
+main.main()
+	_testmain.go:88 +0x135
+
+goroutine 427387 [chan receive, 6 minutes]:
+6.824/labrpc.(*ClientEnd).Call(0xc003b7fc80, 0x61ce05, 0xc, 0x5bd100, 0xc000195740, 0x5bd140, 0xc000195760, 0x47f401)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/kvraft.(*Clerk).sendGet(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:32
+6.824/kvraft.(*Clerk).Get(0xc00318e540, 0x6235c8, 0x1, 0x405c61, 0xc001b95620)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:59 +0x136
+6.824/kvraft.Get(0xc0000e4840, 0xc00318e540, 0x6235c8, 0x1, 0xc003b7fc20, 0x0, 0xc002929b80, 0xae)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:43 +0x91
+6.824/kvraft.GenericTest(0xc0000e0100, 0x61b5c5, 0x2, 0x5, 0x5, 0x62010101, 0xffffffffffffffff, 0x6e2a65b300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:340 +0x433
+6.824/kvraft.TestPersistPartitionUnreliable3A(0xc0000e0100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:586 +0x6c
+testing.tRunner(0xc0000e0100, 0x62ef00)
+	/usr/lib/go-1.13/src/testing/testing.go:909 +0xc9
+created by testing.(*T).Run
+	/usr/lib/go-1.13/src/testing/testing.go:960 +0x350
+
+goroutine 611881 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc001ecefa0, 0x61e395, 0x12, 0x5bd700, 0xc002ad9d00, 0x5bd740, 0xc001771e60, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:110
+6.824/raft.(*Raft).handleSendAppendEntries(0xc000f27860, 0x4)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:143 +0x19f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:261 +0xb4
+
+goroutine 10 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 12 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 176660 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 14 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 16 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 34 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 276202 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 293275 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 192482 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 184567 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 293277 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 25645 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 297609 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433088 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 176654 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 77012 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000283600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 192484 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 302185 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 198209 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712b00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 226563 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fef00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433082 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63802 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001feb00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 372420 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002175300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 25647 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020b80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 89494 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021b00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 372380 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 89496 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 421077 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000282a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 226527 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 77008 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000283200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 192486 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848b00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438673 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 297607 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 89500 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 226525 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 184561 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fef80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 360575 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 198189 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 297615 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 611878 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc001ecef20, 0x61e395, 0x12, 0x5bd700, 0xc003430b80, 0x5bd740, 0xc001b5a560, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:110
+6.824/raft.(*Raft).handleSendAppendEntries(0xc000f27860, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:143 +0x19f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:261 +0xb4
+
+goroutine 427392 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 184565 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 108339 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fec80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 108341 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fee80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63796 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63798 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 184563 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 421079 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000282c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 421075 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000282780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 276172 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 77004 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000282e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 427390 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 297611 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 248710 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 25643 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 293271 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63794 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 12698 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 372418 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174f00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 12700 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 302189 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001713000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 248716 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 108317 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438678 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc000f27950)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 293273 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63800 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 12702 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307054 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174b80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 168203 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433084 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307090 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002175080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76645 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307050 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 108319 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76643 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307481 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ffb00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433392 [chan send, 6 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc00318e570, 0x5, 0x5, 0x1, 0xc0027a1e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x1, 0xc001714930, 0xc0000e0100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000e0100, 0xc0000e4840, 0x1, 0xc00204f260, 0xc0022504b0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 168209 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307475 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 25649 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020d80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307479 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 192462 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 168211 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 192464 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433390 [chan receive, 6 minutes]:
+6.824/kvraft.spawn_clients_and_wait(0xc0000e0100, 0xc0000e4840, 0x5, 0xc0022504b0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:117 +0x149
+created by 6.824/kvraft.GenericTest
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:253 +0x5a1
+
+goroutine 248712 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 25641 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 360615 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002175280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438679 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438677 [chan send, 6 minutes]:
+6.824/kvraft.(*KVServer).signalStartCh(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:51
+6.824/kvraft.(*KVServer).handleCommandApply(0xc003384600, 0x1, 0x6036e0, 0xc001f9a2d0, 0x27e, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:39 +0x1f0
+6.824/kvraft.(*KVServer).handleApplyMessage(0xc003384600, 0x1, 0x6036e0, 0xc001f9a2d0, 0x27e, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:70 +0xe9
+6.824/kvraft.(*KVServer).applyTicker(0xc003384600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:92 +0x69
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76641 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 611898 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x989680)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/labrpc.(*Network).processReq(0xc000fb01e0, 0x5cb400, 0xc0029e6770, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc003107000, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:225 +0x7e9
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+
+goroutine 360609 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 198191 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 427388 [select]:
+6.824/labrpc.MakeNetwork.func1(0xc000fb01e0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:153 +0x160
+created by 6.824/labrpc.MakeNetwork
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:151 +0x138
+
+goroutine 307056 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 168205 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307477 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 184543 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fec00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 108337 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fea00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 372382 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307052 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 89492 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438715 [semacquire, 6 minutes]:
+sync.runtime_SemacquireMutex(0xc003384604, 0xc002b70000, 0x1)
+	/usr/lib/go-1.13/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc003384600)
+	/usr/lib/go-1.13/src/sync/mutex.go:138 +0xfc
+sync.(*Mutex).Lock(...)
+	/usr/lib/go-1.13/src/sync/mutex.go:81
+6.824/kvraft.(*KVServer).handleGetResult(0xc003384600, 0x2, 0x0, 0x61b684, 0x3, 0x7932f0, 0x1, 0x0, 0x0, 0x26bff93db68ac34b, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:156 +0x389
+6.824/kvraft.(*KVServer).Get(0xc003384600, 0xc003a53e20, 0xc003a53e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:256 +0x388
+reflect.Value.call(0xc000072240, 0xc000390588, 0x13, 0x61b784, 0x4, 0xc000f6dbb8, 0x3, 0x3, 0xc000f6da80, 0x4b899d, ...)
+	/usr/lib/go-1.13/src/reflect/value.go:460 +0x5f6
+reflect.Value.Call(0xc000072240, 0xc000390588, 0x13, 0xc000f6dbb8, 0x3, 0x3, 0x0, 0x20, 0xc001af1808)
+	/usr/lib/go-1.13/src/reflect/value.go:321 +0xb4
+6.824/labrpc.(*Service).dispatch(0xc000cfcb40, 0x61ce0e, 0x3, 0x5cb400, 0xc002b57c10, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc000c9a3c0, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x682
+6.824/labrpc.(*Server).dispatch(0xc001ecf740, 0x5cb400, 0xc002b57c10, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc000c9a3c0, 0x4f, 0x93, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x4a3
+6.824/labrpc.(*Network).processReq.func1(0xc001ecf740, 0x5cb400, 0xc002b57c10, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc000c9a3c0, 0x4f, 0x93, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x60
+created by 6.824/labrpc.(*Network).processReq
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x141
+
+goroutine 77010 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000283400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 226561 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 226565 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 198185 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 248718 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 276032 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 276176 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020f00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 89498 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021f00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 168207 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 77006 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000283000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 421039 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000282100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 176658 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 198187 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 427412 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438674 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc000f27770)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 176656 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001ff280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 302181 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433443 [chan send, 6 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc00318e570, 0x5, 0x5, 0x4, 0xc001c7fe40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x4, 0xc000e9f200, 0xc0000e0100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000e0100, 0xc0000e4840, 0x4, 0xc00204f380, 0xc0022504b0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 302183 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 293279 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 176652 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001feb80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 248714 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848b80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 360613 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174f80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 427414 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 297613 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000849c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 307473 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001fe880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 276174 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438676 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc000f27860)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 611899 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0xd59f80)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/labrpc.(*Network).processReq(0xc000fb01e0, 0x5cb400, 0xc0029e67d0, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc003107100, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:225 +0x7e9
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+
+goroutine 438592 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc000f27680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 302187 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001712d80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438681 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433086 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 360611 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433441 [chan send, 6 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc00318e570, 0x5, 0x5, 0x2, 0xc0017fde40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x2, 0xc001714840, 0xc0000e0100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000e0100, 0xc0000e4840, 0x2, 0xc00204f2c0, 0xc0022504b0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 611896 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x112a880)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/labrpc.(*Network).processReq(0xc000fb01e0, 0x5cb400, 0xc0029e6790, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc003106f00, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:225 +0x7e9
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+
+goroutine 438675 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433442 [chan send, 6 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc00318e570, 0x5, 0x5, 0x3, 0xc000c57e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x3, 0xc001714b40, 0xc0000e0100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000e0100, 0xc0000e4840, 0x3, 0xc00204f320, 0xc0022504b0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 372384 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc002174b00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 421073 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000282500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 438680 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc000f27a40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 427410 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc003384880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 433080 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000848200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 611879 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc001ecef40, 0x61e395, 0x12, 0x5bd700, 0xc003430980, 0x5bd740, 0xc001b5a520, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:110
+6.824/raft.(*Raft).handleSendAppendEntries(0xc000f27860, 0x1)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:143 +0x19f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:261 +0xb4
+
+goroutine 611897 [runnable]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x5b8d80)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/labrpc.(*Network).processReq(0xc000fb01e0, 0x5cb400, 0xc0029e67f0, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc0032da500, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:225 +0x7e9
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+
+goroutine 611880 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc001ecef80, 0x61e395, 0x12, 0x5bd700, 0xc003430dc0, 0x5bd740, 0xc001b5a5a0, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:110
+6.824/raft.(*Raft).handleSendAppendEntries(0xc000f27860, 0x3)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:143 +0x19f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:261 +0xb4
+
+goroutine 438693 [select]:
+6.824/labrpc.(*Network).processReq(0xc000fb01e0, 0x5cb400, 0xc002b57c10, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc000c9a3c0, 0x4f, 0x93, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:251 +0x258
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+exit status 2
+FAIL	6.824/kvraft	600.584s
+Test: one client (3A) ...
+  ... Passed --  15.1  5  6054  591
+Test: ops complete fast enough (3A) ...
+  ... Passed --  25.4  3  5517    0
+Test: many clients (3A) ...
+  ... Passed --  15.4  5 19381 2958
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.0  5  5352 1207
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.9  3   144   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    79    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   356    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5   173    3
+Test: partitions, one client (3A) ...
+  ... Passed --  22.6  5  7249  569
+Test: partitions, many clients (3A) ...
+  ... Passed --  22.9  5 22630 2961
+Test: restarts, one client (3A) ...
+  ... Passed --  18.7  5 11998  591
+Test: restarts, many clients (3A) ...
+  ... Passed --  19.1  5 50766 2952
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  20.2  5  6110 1230
+Test: restarts, partitions, many clients (3A) ...
+  ... Passed --  26.2  5 49968 2797
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+  ... Passed --  27.3  5  6617  950
+Test: unreliable net, restarts, partitions, random keys, many clients (3A) ...
+  ... Passed --  29.7  7 16619 1876
+PASS
+ok  	6.824/kvraft	262.077s
+Test: one client (3A) ...
+  ... Passed --  15.1  5  5261  593
+Test: ops complete fast enough (3A) ...
+  ... Passed --  25.5  3  5481    0
+Test: many clients (3A) ...
+  ... Passed --  15.4  5 16463 2968
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.2  5  5386 1224
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.9  3   169   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    91    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   355    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5   172    3
+Test: partitions, one client (3A) ...
+  ... Passed --  22.6  5 10543  513
+Test: partitions, many clients (3A) ...
+  ... Passed --  22.9  5 70722 2512
+Test: restarts, one client (3A) ...
+  ... Passed --  18.7  5 13844  589
+Test: restarts, many clients (3A) ...
+  ... Passed --  19.1  5 53810 2942
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  20.0  5  6030 1245
+Test: restarts, partitions, many clients (3A) ...
+  ... Passed --  26.9  5 27245 2587
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+  ... Passed --  27.0  5  6392  834
+Test: unreliable net, restarts, partitions, random keys, many clients (3A) ...
+  ... Passed --  30.0  7 16204 2047
+PASS
+ok  	6.824/kvraft	262.974s
+Test: one client (3A) ...
+  ... Passed --  15.1  5  6355  590
+Test: ops complete fast enough (3A) ...
+  ... Passed --  25.5  3  5759    0
+Test: many clients (3A) ...
+  ... Passed --  15.4  5 16019 2967
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.0  5  5291 1250
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   0.8  3   149   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    79    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   353    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5   172    3
+Test: partitions, one client (3A) ...
+  ... Passed --  22.8  5  7756  535
+Test: partitions, many clients (3A) ...
+  ... Passed --  22.8  5 21069 2856
+Test: restarts, one client (3A) ...
+  ... Passed --  19.1  5 16549  591
+Test: restarts, many clients (3A) ...
+  ... Passed --  19.1  5 60501 2941
+Test: unreliable net, restarts, many clients (3A) ...
+  ... Passed --  20.3  5  6128 1243
+Test: restarts, partitions, many clients (3A) ...
+  ... Passed --  26.6  5 27273 2354
+Test: unreliable net, restarts, partitions, many clients (3A) ...
+  ... Passed --  26.8  5  6677  936
+Test: unreliable net, restarts, partitions, random keys, many clients (3A) ...
+panic: test timed out after 10m0s
+
+goroutine 660052 [running]:
+testing.(*M).startAlarm.func1()
+	/usr/lib/go-1.13/src/testing/testing.go:1377 +0xdf
+created by time.goFunc
+	/usr/lib/go-1.13/src/time/sleep.go:168 +0x44
+
+goroutine 1 [chan receive, 6 minutes]:
+testing.(*T).Run(0xc0000f4200, 0x625406, 0x2c, 0x62ef08, 0x47f401)
+	/usr/lib/go-1.13/src/testing/testing.go:961 +0x377
+testing.runTests.func1(0xc0000f4000)
+	/usr/lib/go-1.13/src/testing/testing.go:1202 +0x78
+testing.tRunner(0xc0000f4000, 0xc00008fdc0)
+	/usr/lib/go-1.13/src/testing/testing.go:909 +0xc9
+testing.runTests(0xc0000b87a0, 0x7a6fc0, 0x17, 0x17, 0x0)
+	/usr/lib/go-1.13/src/testing/testing.go:1200 +0x2a7
+testing.(*M).Run(0xc0000e4000, 0x0)
+	/usr/lib/go-1.13/src/testing/testing.go:1117 +0x176
+main.main()
+	_testmain.go:88 +0x135
+
+goroutine 398706 [chan receive, 5 minutes]:
+6.824/labrpc.(*ClientEnd).Call(0xc000172740, 0x61ce05, 0xc, 0x5bd100, 0xc0029c7da0, 0x5bd140, 0xc0029c7dc0, 0x47f401)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/kvraft.(*Clerk).sendGet(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:32
+6.824/kvraft.(*Clerk).Get(0xc002dd0360, 0x6235c8, 0x1, 0x405c61, 0xc00163d380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:59 +0x136
+6.824/kvraft.Get(0xc0000fa780, 0xc002dd0360, 0x6235c8, 0x1, 0xc0001726c0, 0x0, 0xc0040fa1e0, 0x28)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:43 +0x91
+6.824/kvraft.GenericTest(0xc0000f4200, 0x61b5c5, 0x2, 0xf, 0x7, 0x62010101, 0xffffffffffffffff, 0x17af9ba4201)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:340 +0x433
+6.824/kvraft.TestPersistPartitionUnreliableLinearizable3A(0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:591 +0x6c
+testing.tRunner(0xc0000f4200, 0x62ef08)
+	/usr/lib/go-1.13/src/testing/testing.go:909 +0xc9
+created by testing.(*T).Run
+	/usr/lib/go-1.13/src/testing/testing.go:960 +0x350
+
+goroutine 149596 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 185198 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 22 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 28677 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 24 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 243065 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 26 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 82631 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 28 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 313064 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 30 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 220335 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420763 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a59380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 220339 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 392995 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 28681 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 317618 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63171 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63175 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63169 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410333 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x1, 0xc00150fe40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x1, 0xc003ed2630, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x1, 0xc001efc060, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 322664 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 263983 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 15142 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 308723 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 28679 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 382084 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76123 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420904 [select]:
+6.824/labrpc.(*Network).processReq(0xc002178550, 0x5cb400, 0xc0016045b0, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc001c00500, 0x4f, 0x93, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:251 +0x258
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+
+goroutine 102905 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 243061 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420755 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398502 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 169360 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 175743 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 382080 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 387502 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0027c0700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 149652 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 82627 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410341 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x9, 0xc00118fe40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x9, 0xc003ed2ba0, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x9, 0xc001efc420, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 376958 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 75779 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 15144 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 15140 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 63173 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 352686 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 185190 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 264003 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 323078 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 28675 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398719 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9f00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410337 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x5, 0xc001db7e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x5, 0xc003ed2a50, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x5, 0xc001efc240, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 158117 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 169378 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4b00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 185194 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020d80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 82633 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 313062 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 323082 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 352688 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 82629 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 308721 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5b80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 169382 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420764 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027ef1d0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 308669 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410340 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x8, 0xc003f8de40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x8, 0xc003ed2990, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x8, 0xc001efc3c0, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 398717 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410336 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x4, 0xc0043d7e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x4, 0xc003ed27e0, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x4, 0xc001efc1e0, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 28683 [chan receive, 9 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020b80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 313024 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 409728 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 158115 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 365008 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4b80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 175735 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 392997 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 409750 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 75783 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 660041 [runnable]:
+reflect.Value.Type(0x6036e0, 0xc001d47130, 0x99, 0x6036e0, 0xc001d47130)
+	/usr/lib/go-1.13/src/reflect/value.go:1874 +0x1a4
+encoding/gob.(*Encoder).encodeInterface(0xc0000e6500, 0xc0000e6538, 0x5da120, 0xc00304c5f8, 0x194)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:400 +0x207
+encoding/gob.encOpFor.func5(0xc0000fa4b0, 0xc0001075c0, 0x5da120, 0xc00304c5f8, 0x194)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:589 +0x6a
+encoding/gob.(*Encoder).encodeStruct(0xc0000e6500, 0xc0000e6538, 0xc000160ca0, 0x5ea7e0, 0xc00304c5f0, 0x199)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:328 +0x268
+encoding/gob.encOpFor.func4(0x0, 0xc000107580, 0x5ea7e0, 0xc00304c5f0, 0x199)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:581 +0xac
+encoding/gob.(*Encoder).encodeArray(0xc0000e6500, 0xc0000e6538, 0x5c5d80, 0xc003cb8e60, 0x97, 0xc0004291b0, 0x0, 0x60c, 0x0)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:351 +0x168
+encoding/gob.encOpFor.func1(0xc00042be60, 0xc000107540, 0x5c5d80, 0xc003cb8e60, 0x97)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:551 +0xfc
+encoding/gob.(*Encoder).encodeSingle(0xc0000e6500, 0xc0000e6538, 0xc000160c80, 0x5c5d80, 0xc003cb8e60, 0x97)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:301 +0x1c5
+encoding/gob.(*Encoder).encode(0xc0000e6500, 0xc0000e6538, 0x5c5d80, 0xc003cb8e60, 0x97, 0xc0004a60c0)
+	/usr/lib/go-1.13/src/encoding/gob/encode.go:703 +0x1b7
+encoding/gob.(*Encoder).EncodeValue(0xc0000e6500, 0x5c5d80, 0xc003cb8e60, 0x97, 0x0, 0x0)
+	/usr/lib/go-1.13/src/encoding/gob/encoder.go:251 +0x3ce
+encoding/gob.(*Encoder).Encode(0xc0000e6500, 0x5c5d80, 0xc003cb8e60, 0x1, 0xc003cb8e60)
+	/usr/lib/go-1.13/src/encoding/gob/encoder.go:176 +0xa4
+6.824/labgob.(*LabEncoder).Encode(0xc00238b668, 0x5c5d80, 0xc003cb8e60, 0xc003cb8e60, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labgob/labgob.go:34 +0x5a
+6.824/raft.(*Raft).getPersistData(0xc0027ef1d0, 0xc0846bf35d7898ac, 0x8bb2cac0b3, 0x7aa680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:146 +0x12a
+6.824/raft.(*Raft).persist(0xc0027ef1d0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:156 +0x2b
+6.824/raft.(*Raft).becomeFollower(0xc0027ef1d0, 0x35, 0xffffffffffffffff)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raftUtils.go:86 +0x71
+6.824/raft.(*Raft).AppendEntriesWithLock(0xc0027ef1d0, 0xc000107480, 0xc00246e800, 0xc00052f500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:41 +0xbb
+6.824/raft.(*Raft).AppendEntries(0xc0027ef1d0, 0xc000107480, 0xc00246e800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:97 +0x3f
+reflect.Value.call(0xc0000ac300, 0xc0000ab200, 0x13, 0x61b784, 0x4, 0xc00238bbb8, 0x3, 0x3, 0xc00238ba80, 0x4b899d, ...)
+	/usr/lib/go-1.13/src/reflect/value.go:460 +0x5f6
+reflect.Value.Call(0xc0000ac300, 0xc0000ab200, 0x13, 0xc00238bbb8, 0x3, 0x3, 0x601fc0, 0xc0004a76c0, 0x0)
+	/usr/lib/go-1.13/src/reflect/value.go:321 +0xb4
+6.824/labrpc.(*Service).dispatch(0xc000091a00, 0x61e39a, 0xd, 0x5cb400, 0xc0010c8ad0, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc00224a200, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x682
+6.824/labrpc.(*Server).dispatch(0xc000385040, 0x5cb400, 0xc0010c8ad0, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc00224a200, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x4a3
+6.824/labrpc.(*Network).processReq.func1(0xc000385040, 0x5cb400, 0xc0010c8ad0, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc00224a200, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x60
+created by 6.824/labrpc.(*Network).processReq
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x141
+
+goroutine 63177 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420945 [semacquire, 5 minutes]:
+sync.runtime_SemacquireMutex(0xc001a58d84, 0xc000476100, 0x1)
+	/usr/lib/go-1.13/src/runtime/sema.go:71 +0x47
+sync.(*Mutex).lockSlow(0xc001a58d80)
+	/usr/lib/go-1.13/src/sync/mutex.go:138 +0xfc
+sync.(*Mutex).Lock(...)
+	/usr/lib/go-1.13/src/sync/mutex.go:81
+6.824/kvraft.(*KVServer).handleGetResult(0xc001a58d80, 0x2, 0x0, 0x61b684, 0x3, 0x7932f0, 0x1, 0x0, 0x0, 0x20476827417ccb84, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:156 +0x389
+6.824/kvraft.(*KVServer).Get(0xc001a58d80, 0xc000dfaa80, 0xc000dfaaa0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerGet.go:256 +0x388
+reflect.Value.call(0xc0000ac1e0, 0xc0000aaae0, 0x13, 0x61b784, 0x4, 0xc00222bbb8, 0x3, 0x3, 0xc00222ba80, 0x4b899d, ...)
+	/usr/lib/go-1.13/src/reflect/value.go:460 +0x5f6
+reflect.Value.Call(0xc0000ac1e0, 0xc0000aaae0, 0x13, 0xc00222bbb8, 0x3, 0x3, 0x0, 0x20, 0xc002231688)
+	/usr/lib/go-1.13/src/reflect/value.go:321 +0xb4
+6.824/labrpc.(*Service).dispatch(0xc000090dc0, 0x61ce0e, 0x3, 0x5cb400, 0xc0016045b0, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc001c00500, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:496 +0x682
+6.824/labrpc.(*Server).dispatch(0xc001595700, 0x5cb400, 0xc0016045b0, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc001c00500, 0x4f, 0x93, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:420 +0x4a3
+6.824/labrpc.(*Network).processReq.func1(0xc001595700, 0x5cb400, 0xc0016045b0, 0x61ce05, 0xc, 0x668ee0, 0x5bd100, 0xc001c00500, 0x4f, 0x93, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:240 +0x60
+created by 6.824/labrpc.(*Network).processReq
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:239 +0x141
+
+goroutine 387506 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0027c0c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410334 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x2, 0xc002449e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x2, 0xc003ed26c0, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x2, 0xc001efc0c0, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 409722 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 323080 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 185196 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 75781 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020380)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 264001 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8d80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76127 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398480 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 220341 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 243063 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 175741 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420766 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027ef2c0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 308671 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 102907 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8b00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 158119 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8f00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398711 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76145 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 387498 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0027c0100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 313058 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 149598 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 317620 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 376994 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 409748 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021f80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 169358 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8000)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 220343 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021d00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 158079 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 393003 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58f80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76125 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5280)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 158113 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420761 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a59100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 322662 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 82625 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4680)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 376998 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 102903 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 102899 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 263979 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8100)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398713 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398715 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 317624 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 76121 [chan receive, 8 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410335 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x3, 0xc002449e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x3, 0xc003ed2750, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x3, 0xc001efc180, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 660065 [select]:
+6.824/labrpc.(*Network).processReq(0xc002178550, 0x5cb400, 0xc0010c8ad0, 0x61e395, 0x12, 0x668ee0, 0x5bd700, 0xc00224a200, 0xc1, 0xf8, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:251 +0x258
+created by 6.824/labrpc.MakeNetwork.func1
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:157 +0xae
+
+goroutine 185192 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 149600 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 322660 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 102901 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 382082 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 382078 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58780)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 387504 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0027c0980)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 382076 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398709 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8a80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 317626 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9a00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 175739 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 175737 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398504 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020f00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410339 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x7, 0xc002453e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x7, 0xc003ed2900, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x7, 0xc001efc360, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 149650 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 322658 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 169380 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4f80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 365046 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5f80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420758 [runnable]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027eef00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 308667 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4d80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 409726 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 387500 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0027c0480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 317622 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a9500)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 243059 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5180)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 313060 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8e00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 392999 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 220337 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 263981 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8480)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 323074 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8400)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 243057 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4700)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 365042 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420757 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 365044 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398500 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5e80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 376960 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 352684 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 323076 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 322640 [chan receive, 7 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0001a8580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 365006 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e4080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 352724 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021900)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 409724 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021080)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 376996 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58800)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 393001 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58c00)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420765 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a59600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 352722 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021600)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398498 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc0000e5580)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 398707 [select]:
+6.824/labrpc.MakeNetwork.func1(0xc002178550)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:153 +0x160
+created by 6.824/labrpc.MakeNetwork
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:151 +0x138
+
+goroutine 420754 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027eed20)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 420760 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027eeff0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 410344 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0xc, 0xc00118fe40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0xc, 0xc003ed2ae0, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0xc, 0xc001efc540, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 410343 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0xb, 0xc002667e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0xb, 0xc003ed2c30, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0xb, 0xc001efc4e0, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 410342 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0xa, 0xc00192be40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0xa, 0xc003ed2870, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0xa, 0xc001efc480, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 410346 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0xe, 0xc001c93e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0xe, 0xc003ed2450, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0xe, 0xc001efc600, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 659965 [chan receive]:
+6.824/labrpc.(*ClientEnd).Call(0xc001595000, 0x61e395, 0x12, 0x5bd700, 0xc0017fd200, 0x5bd740, 0xc0038e62a0, 0x0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/labrpc/labrpc.go:112 +0x2e9
+6.824/raft.(*Raft).sendAppendEntries(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:110
+6.824/raft.(*Raft).handleSendAppendEntries(0xc0027eef00, 0x5)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:143 +0x19f
+created by 6.824/raft.(*Raft).broadcastAppendEntries
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/appendEntities.go:261 +0xb4
+
+goroutine 398721 [chan receive, 6 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000020300)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410338 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0x6, 0xc002445e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0x6, 0xc003ed24e0, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0x6, 0xc001efc2a0, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 410331 [chan receive, 5 minutes]:
+6.824/kvraft.spawn_clients_and_wait(0xc0000f4200, 0xc0000fa780, 0xf, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:117 +0x149
+created by 6.824/kvraft.GenericTest
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:253 +0x5a1
+
+goroutine 420759 [chan send, 5 minutes]:
+6.824/kvraft.(*KVServer).signalStartCh(...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:51
+6.824/kvraft.(*KVServer).handleCommandApply(0xc001a58d80, 0x1, 0x6036e0, 0xc003470870, 0x60b, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:39 +0x1f0
+6.824/kvraft.(*KVServer).handleApplyMessage(0xc001a58d80, 0x1, 0x6036e0, 0xc003470870, 0x60b, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:70 +0xe9
+6.824/kvraft.(*KVServer).applyTicker(0xc001a58d80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:92 +0x69
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 409746 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc000021c80)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 410345 [chan send, 5 minutes]:
+6.824/kvraft.GenericTest.func1.1(0xc000020c80, 0xf, 0xf, 0xd, 0xc0033a7e40)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:256 +0x55
+6.824/kvraft.GenericTest.func1(0xd, 0xc003ed2cf0, 0xc0000f4200)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:291 +0x6a6
+6.824/kvraft.run_client(0xc0000f4200, 0xc0000fa780, 0xd, 0xc001efc5a0, 0xc00182e410)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:103 +0xbe
+created by 6.824/kvraft.spawn_clients_and_wait
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/test_test.go:113 +0x91
+
+goroutine 420762 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027ef0e0)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+
+goroutine 420767 [chan receive, 5 minutes]:
+6.824/kvraft.(*KVServer).applyTicker(0xc001a59880)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/kvServerApplyTicker.go:86 +0xb2
+created by 6.824/kvraft.StartKVServer
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/kvraft/server.go:118 +0x1f4
+
+goroutine 420756 [sleep]:
+runtime.goparkunlock(...)
+	/usr/lib/go-1.13/src/runtime/proc.go:310
+time.Sleep(0x17d7840)
+	/usr/lib/go-1.13/src/runtime/time.go:105 +0x157
+6.824/raft.(*Raft).ticker(0xc0027eee10)
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:287 +0x30
+created by 6.824/raft.Make
+	/mnt/c/Users/xingk/Documents/gitlab/code/src/raft/raft.go:367 +0x1cd
+exit status 2
+FAIL	6.824/kvraft	600.763s
+Test: one client (3A) ...
+  ... Passed --  15.1  5  5362  593
+Test: ops complete fast enough (3A) ...
+  ... Passed --  25.5  3  6084    0
+Test: many clients (3A) ...
+  ... Passed --  15.4  5 14801 2968
+Test: unreliable net, many clients (3A) ...
+  ... Passed --  16.0  5  5344 1243
+Test: concurrent append to same key, unreliable (3A) ...
+  ... Passed --   1.1  3   203   52
+Test: progress in majority (3A) ...
+  ... Passed --   0.3  5    85    2
+Test: no progress in minority (3A) ...
+  ... Passed --   1.1  5   348    3
+Test: completion after heal (3A) ...
+  ... Passed --   1.0  5   168    3
+Test: partitions, one client (3A) ...
+signal: interrupt
+FAIL	6.824/kvraft	76.968s
+Test: one client (3A) ...
+signal: interrupt
+FAIL	6.824/kvraft	1.646s
+Test: one client (3A) ...
+signal: interrupt
+FAIL	6.824/kvraft	0.868s
+Test: one client (3A) ...
+signal: interrupt
+FAIL	6.824/kvraft	0.039s
